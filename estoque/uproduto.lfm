@@ -1,16 +1,16 @@
 inherited fProduto: TfProduto
   Left = 255
-  Height = 531
+  Height = 537
   Top = 102
-  Width = 885
+  Width = 891
   Caption = 'Produto'
-  ClientHeight = 531
-  ClientWidth = 885
+  ClientHeight = 537
+  ClientWidth = 891
   OnCreate = FormCreate
   inherited Panel1: TPanel
-    Width = 885
+    Width = 891
     Caption = 'Produtos/Itens'
-    ClientWidth = 885
+    ClientWidth = 891
     object DBText1: TDBText[0]
       Left = 26
       Height = 19
@@ -28,9 +28,9 @@ inherited fProduto: TfProduto
     end
   end
   inherited Panel2: TPanel
-    Left = 809
-    Height = 481
-    ClientHeight = 481
+    Left = 815
+    Height = 487
+    ClientHeight = 487
     inherited btnPROC: TImage
       OnClick = btnPROCClick
     end
@@ -39,10 +39,10 @@ inherited fProduto: TfProduto
     end
   end
   inherited Panel3: TPanel
-    Height = 481
-    Width = 809
-    ClientHeight = 481
-    ClientWidth = 809
+    Height = 487
+    Width = 815
+    ClientHeight = 487
+    ClientWidth = 815
     OnClick = Panel3Click
     object DBEdit1: TDBEdit[0]
       Left = 704
@@ -56,9 +56,9 @@ inherited fProduto: TfProduto
       TabOrder = 0
     end
     object Label1: TLabel[1]
-      Left = 608
+      Left = 592
       Height = 20
-      Top = 12
+      Top = 8
       Width = 109
       Caption = 'Código Produto'
       ParentColor = False
@@ -66,7 +66,7 @@ inherited fProduto: TfProduto
     object DBEdit2: TDBEdit[2]
       Left = 8
       Height = 32
-      Top = 54
+      Top = 58
       Width = 328
       DataField = 'PRODUTO'
       DataSource = ds
@@ -77,13 +77,13 @@ inherited fProduto: TfProduto
     object BitBtn1: TBitBtn[3]
       Left = 392
       Height = 23
-      Top = 54
+      Top = 58
       Width = 32
       Caption = '...'
       TabOrder = 2
     end
     object Label2: TLabel[4]
-      Left = 184
+      Left = 176
       Height = 20
       Top = 8
       Width = 73
@@ -109,7 +109,7 @@ inherited fProduto: TfProduto
       ParentColor = False
     end
     object Label4: TLabel[7]
-      Left = 352
+      Left = 344
       Height = 20
       Top = 40
       Width = 24
@@ -167,7 +167,7 @@ inherited fProduto: TfProduto
     object BitBtn2: TBitBtn[14]
       Left = 184
       Height = 23
-      Top = 150
+      Top = 152
       Width = 32
       Caption = '...'
       TabOrder = 4
@@ -175,7 +175,7 @@ inherited fProduto: TfProduto
     object BitBtn3: TBitBtn[15]
       Left = 752
       Height = 23
-      Top = 151
+      Top = 152
       Width = 32
       Caption = '...'
       TabOrder = 5
@@ -204,8 +204,9 @@ inherited fProduto: TfProduto
       Caption = 'Preços'
       ClientHeight = 147
       ClientWidth = 407
-      Color = 12105398
+      Font.Color = clScrollBar
       ParentColor = False
+      ParentFont = False
       TabOrder = 6
       object Label14: TLabel
         Left = 8
@@ -213,10 +214,12 @@ inherited fProduto: TfProduto
         Top = 8
         Width = 107
         Caption = 'Ultima Entrada:'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
       end
       object DBEdit7: TDBEdit
-        Left = 104
+        Left = 125
         Height = 32
         Top = 72
         Width = 80
@@ -231,10 +234,12 @@ inherited fProduto: TfProduto
         Top = 40
         Width = 82
         Caption = 'Preço Custo'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
       end
       object DBEdit8: TDBEdit
-        Left = 104
+        Left = 125
         Height = 32
         Top = 8
         Width = 80
@@ -249,11 +254,13 @@ inherited fProduto: TfProduto
         Top = 72
         Width = 112
         Caption = 'V. Compra Atual'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
         OnClick = Label16Click
       end
       object DBEdit15: TDBEdit
-        Left = 104
+        Left = 125
         Height = 32
         Top = 40
         Width = 80
@@ -279,11 +286,13 @@ inherited fProduto: TfProduto
         ClientHeight = 21
         ClientWidth = 335
         Columns = 3
+        Font.Color = clBlack
         Items.Strings = (
           'Preço Médio'
           'Últ. Compra'
           'Fixo'
         )
+        ParentFont = False
         TabOrder = 3
       end
       object Label11: TLabel
@@ -292,7 +301,9 @@ inherited fProduto: TfProduto
         Top = 8
         Width = 75
         Caption = 'Margem %'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
       end
       object Label17: TLabel
         Left = 213
@@ -300,7 +311,9 @@ inherited fProduto: TfProduto
         Top = 40
         Width = 79
         Caption = 'ValorVenda'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
       end
       object Label18: TLabel
         Left = 213
@@ -308,11 +321,13 @@ inherited fProduto: TfProduto
         Top = 72
         Width = 103
         Caption = 'ValorV.Minimo'
+        Font.Color = clBlack
         ParentColor = False
+        ParentFont = False
       end
     end
     object DBComboBox1: TDBComboBox[19]
-      Left = 72
+      Left = 56
       Height = 32
       Top = 8
       Width = 100
@@ -328,7 +343,7 @@ inherited fProduto: TfProduto
       TabOrder = 7
     end
     object Label19: TLabel[20]
-      Left = 32
+      Left = 8
       Height = 20
       Top = 8
       Width = 30
@@ -343,7 +358,6 @@ inherited fProduto: TfProduto
       Caption = 'Estoque'
       ClientHeight = 147
       ClientWidth = 367
-      Color = 11382189
       ParentColor = False
       TabOrder = 8
       object Label20: TLabel
@@ -382,7 +396,7 @@ inherited fProduto: TfProduto
         Left = 80
         Height = 32
         Top = 104
-        Width = 248
+        Width = 268
         ItemHeight = 0
         Items.Strings = (
           'Tramac'
@@ -439,7 +453,6 @@ inherited fProduto: TfProduto
           Caption = 'Classificação Fiscal'
           ClientHeight = 68
           ClientWidth = 270
-          Color = clGray
           ParentColor = False
           TabOrder = 0
           OnClick = GroupBox3Click
@@ -498,23 +511,19 @@ inherited fProduto: TfProduto
         end
         object GroupBox4: TGroupBox
           Left = 280
-          Height = 89
+          Height = 86
           Top = 8
           Width = 185
           Caption = 'Origem Da Mercadoria'
-          ClientHeight = 69
+          ClientHeight = 70
           ClientWidth = 183
           Font.CharSet = ANSI_CHARSET
-          Font.Height = -16
           Font.Name = '@Microsoft JhengHei'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          Font.Style = [fsBold, fsUnderline]
           ParentFont = False
           TabOrder = 1
           object DBEdit32: TDBEdit
             Left = 40
-            Height = 31
+            Height = 27
             Top = 12
             Width = 96
             DataSource = ds
@@ -535,11 +544,11 @@ inherited fProduto: TfProduto
         end
         object GroupBox5: TGroupBox
           Left = 504
-          Height = 89
+          Height = 86
           Top = 8
           Width = 272
           Caption = 'Aplicação'
-          ClientHeight = 68
+          ClientHeight = 65
           ClientWidth = 270
           TabOrder = 3
           object DBComboBox3: TDBComboBox
@@ -561,7 +570,7 @@ inherited fProduto: TfProduto
           Left = 8
           Height = 49
           Top = 24
-          Width = 120
+          Width = 102
           AutoFill = True
           Caption = 'Impressora'
           ChildSizing.LeftRightSpacing = 6
@@ -572,7 +581,7 @@ inherited fProduto: TfProduto
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
           ClientHeight = 28
-          ClientWidth = 118
+          ClientWidth = 100
           Items.Strings = (
             'Setor 1'
           )
@@ -582,7 +591,7 @@ inherited fProduto: TfProduto
           Left = 280
           Height = 49
           Top = 24
-          Width = 96
+          Width = 102
           AutoFill = True
           Caption = 'Impressora'
           ChildSizing.LeftRightSpacing = 6
@@ -593,7 +602,7 @@ inherited fProduto: TfProduto
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
           ClientHeight = 28
-          ClientWidth = 94
+          ClientWidth = 100
           Items.Strings = (
             'Setor 3'
           )
@@ -601,8 +610,8 @@ inherited fProduto: TfProduto
         end
         object RadioGroup5: TRadioGroup
           Left = 400
-          Height = 41
-          Top = 32
+          Height = 49
+          Top = 24
           Width = 136
           AutoFill = True
           Caption = 'Imprimir'
@@ -613,7 +622,7 @@ inherited fProduto: TfProduto
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 2
-          ClientHeight = 20
+          ClientHeight = 28
           ClientWidth = 134
           Columns = 2
           Items.Strings = (
@@ -624,9 +633,9 @@ inherited fProduto: TfProduto
         end
         object RadioGroup3: TRadioGroup
           Left = 152
-          Height = 45
-          Top = 28
-          Width = 112
+          Height = 49
+          Top = 24
+          Width = 102
           AutoFill = True
           Caption = 'Impressora'
           ChildSizing.LeftRightSpacing = 6
@@ -636,8 +645,8 @@ inherited fProduto: TfProduto
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 24
-          ClientWidth = 110
+          ClientHeight = 28
+          ClientWidth = 100
           Items.Strings = (
             'Setor 2'
           )
@@ -704,7 +713,7 @@ inherited fProduto: TfProduto
   object DBEdit3: TDBEdit[3]
     Left = 344
     Height = 32
-    Top = 104
+    Top = 108
     Width = 48
     DataField = 'UNIDADEMEDIDA'
     DataSource = ds
@@ -746,10 +755,10 @@ inherited fProduto: TfProduto
     TabOrder = 6
   end
   object DBEdit9: TDBEdit[7]
-    Left = 248
+    Left = 256
     Height = 32
     Top = 56
-    Width = 192
+    Width = 184
     DataField = 'COD_BARRA'
     DataSource = ds
     CharCase = ecNormal
@@ -759,7 +768,7 @@ inherited fProduto: TfProduto
   object DBEdit10: TDBEdit[8]
     Left = 440
     Height = 32
-    Top = 104
+    Top = 108
     Width = 80
     DataSource = ds
     CharCase = ecNormal
@@ -769,7 +778,7 @@ inherited fProduto: TfProduto
   object DBEdit11: TDBEdit[9]
     Left = 544
     Height = 32
-    Top = 104
+    Top = 108
     Width = 96
     DataSource = ds
     CharCase = ecNormal
@@ -779,7 +788,7 @@ inherited fProduto: TfProduto
   object DBEdit12: TDBEdit[10]
     Left = 664
     Height = 32
-    Top = 104
+    Top = 108
     Width = 120
     DataSource = ds
     CharCase = ecNormal
@@ -789,7 +798,7 @@ inherited fProduto: TfProduto
   object DBEdit13: TDBEdit[11]
     Left = 8
     Height = 32
-    Top = 152
+    Top = 154
     Width = 480
     DataSource = ds
     CharCase = ecNormal
@@ -797,19 +806,19 @@ inherited fProduto: TfProduto
     TabOrder = 11
   end
   object DBEdit14: TDBEdit[12]
-    Left = 512
+    Left = 504
     Height = 32
-    Top = 152
-    Width = 272
+    Top = 154
+    Width = 280
     DataSource = ds
     CharCase = ecNormal
     MaxLength = 0
     TabOrder = 12
   end
   object DBEdit16: TDBEdit[13]
-    Left = 304
+    Left = 326
     Height = 32
-    Top = 256
+    Top = 264
     Width = 88
     DataSource = ds
     CharCase = ecNormal
@@ -817,7 +826,7 @@ inherited fProduto: TfProduto
     TabOrder = 13
   end
   object DBEdit17: TDBEdit[14]
-    Left = 664
+    Left = 684
     Height = 32
     Top = 288
     Width = 80
@@ -835,9 +844,9 @@ inherited fProduto: TfProduto
     TabOrder = 15
   end
   object DBEdit18: TDBEdit[16]
-    Left = 304
+    Left = 326
     Height = 32
-    Top = 320
+    Top = 328
     Width = 88
     DataSource = ds
     CharCase = ecNormal
@@ -845,7 +854,7 @@ inherited fProduto: TfProduto
     TabOrder = 16
   end
   object DBEdit20: TDBEdit[17]
-    Left = 496
+    Left = 516
     Height = 32
     Top = 288
     Width = 80
@@ -855,9 +864,9 @@ inherited fProduto: TfProduto
     TabOrder = 17
   end
   object DBEdit21: TDBEdit[18]
-    Left = 304
+    Left = 326
     Height = 32
-    Top = 288
+    Top = 296
     Width = 88
     DataSource = ds
     CharCase = ecNormal
@@ -865,7 +874,7 @@ inherited fProduto: TfProduto
     TabOrder = 18
   end
   object DBEdit22: TDBEdit[19]
-    Left = 496
+    Left = 516
     Height = 32
     Top = 320
     Width = 248
@@ -875,7 +884,7 @@ inherited fProduto: TfProduto
     TabOrder = 19
   end
   object DBEdit23: TDBEdit[20]
-    Left = 664
+    Left = 684
     Height = 32
     Top = 256
     Width = 80
@@ -885,7 +894,7 @@ inherited fProduto: TfProduto
     TabOrder = 20
   end
   object DBEdit24: TDBEdit[21]
-    Left = 496
+    Left = 516
     Height = 32
     Top = 256
     Width = 80

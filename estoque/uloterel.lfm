@@ -1,0 +1,229 @@
+object fLoteRel: TfLoteRel
+  Left = 562
+  Height = 746
+  Top = 165
+  Width = 849
+  Caption = 'fLoteRel'
+  ClientHeight = 746
+  ClientWidth = 849
+  LCLVersion = '1.8.4.0'
+  object RLReport1: TRLReport
+    Left = 16
+    Height = 1123
+    Top = 0
+    Width = 794
+    DataSource = ds
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    object RLLabel1: TRLLabel
+      Left = 60
+      Height = 15
+      Top = 56
+      Width = 58
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+    end
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 34
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLLabel2: TRLLabel
+        Left = 72
+        Height = 15
+        Top = 16
+        Width = 106
+        Caption = 'Relatório por Lote'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 441
+        Height = 15
+        Top = 8
+        Width = 37
+        Info = itTitle
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 521
+        Height = 15
+        Top = 8
+        Width = 118
+        Info = itPageNumber
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Pág.:'
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 33
+      Top = 72
+      Width = 718
+      BandType = btColumnHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLLabel3: TRLLabel
+        Left = 23
+        Height = 15
+        Top = 13
+        Width = 29
+        Caption = 'Lote'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel4: TRLLabel
+        Left = 98
+        Height = 15
+        Top = 13
+        Width = 49
+        Caption = 'Produto'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel5: TRLLabel
+        Left = 195
+        Height = 15
+        Top = 10
+        Width = 58
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 37
+      Top = 105
+      Width = 718
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLDBText5: TRLDBText
+        Left = 496
+        Height = 15
+        Top = 16
+        Width = 124
+        DataField = 'DATAFABRICACAO'
+        DataSource = ds
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText4: TRLDBText
+        Left = 410
+        Height = 15
+        Top = 16
+        Width = 68
+        DataField = 'ESTOQUE'
+        DataSource = ds
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText3: TRLDBText
+        Left = 185
+        Height = 15
+        Top = 16
+        Width = 68
+        DataField = 'PRODUTO'
+        DataSource = ds
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText2: TRLDBText
+        Left = 87
+        Height = 15
+        Top = 16
+        Width = 60
+        DataField = 'CODPRO'
+        DataSource = ds
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText1: TRLDBText
+        Left = 24
+        Height = 15
+        Top = 16
+        Width = 38
+        DataField = 'LOTE'
+        DataSource = ds
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 38
+      Height = 32
+      Top = 142
+      Width = 718
+      BandType = btFooter
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 165
+        Height = 15
+        Top = 11
+        Width = 39
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLSystemInfo4: TRLSystemInfo
+        Left = 381
+        Height = 15
+        Top = 12
+        Width = 37
+        Info = itNow
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+  end
+  object ds: TDataSource
+    DataSet = dm.sqLote
+    left = 24
+    top = 40
+  end
+end

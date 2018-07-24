@@ -6,8 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, DBGrids, uPadrao, ACBrBarCode, ACBrLCB,
-  uDm;
+  Dialogs, ExtCtrls, StdCtrls, Buttons, DBGrids, uPadrao, uDm;
 
 type
 
@@ -123,6 +122,7 @@ end;
 
 procedure TfLoteLancar.btnSALVClick(Sender: TObject);
 var num_compra: Integer;
+  num_lote: Integer;
   sql_inc_lote: String;
   qtde_float: Double;
 begin
@@ -130,16 +130,19 @@ begin
   begin
     ShowMessage('Informe a Quantidade do Lote.');
     edQuantidade.SetFocus;
+    Exit;
   end;
   if (edCodProduto.Text = '') then
   begin
     ShowMessage('Informe o Produto.');
     edCodProduto.SetFocus;
+    Exit;
   end;
   if (cbLocal.Text = '') then
   begin
     ShowMessage('Informe o Local.');
     cbLocal.SetFocus;
+    Exit;
   end;
   if (dm.sqPlano.Active) then
     dm.sqPlano.Close;
@@ -151,6 +154,19 @@ begin
   begin
     ShowMessage('Local informado inválido, selecione um na Lista');
     cbLocal.SetFocus;
+    Exit;
+  end;
+
+  dm.sqGen.Active:=False;
+  dm.sqGen.SQL.Clear;
+  dm.sqGen.SQL.Add('SELECT  GEN_ID(GEN_LOTE, 1) AS CHAVE_ID ' +
+    ' FROM RDB$DATABASE');
+  dm.sqGen.Active:=True;
+  num_lote := dm.sqGen.FieldByName('CHAVE_ID').AsInteger;
+
+  if (edLote.Text = '') then
+  begin
+    edLote.Text := IntToStr(num_lote);
   end;
 
   fLoteBuscar.busca(edLote.Text, IntToStr(codProduto), IntToStr(dm.sqPlanoCODIGO.AsInteger));
@@ -216,16 +232,16 @@ begin
   dm.sqCompraNOTAFISCAL.AsInteger   := num_compra;
   dm.sqCompra.Post;
 
-  dm.sqGen.Active:=False;
-  dm.sqGen.SQL.Clear;
-  dm.sqGen.SQL.Add('SELECT  GEN_ID(GEN_LOTE, 1) AS CHAVE_ID ' +
-    ' FROM RDB$DATABASE');
-  dm.sqGen.Active:=True;
-
   sql_inc_lote := 'INSERT INTO LOTES (CODLOTE, LOTE, CODPRODUTO, ' +
     ' DATAFABRICACAO, DATAVENCIMENTO, ESTOQUE, PRECO, CCUSTO) VALUES (';
-  sql_inc_lote += IntToStr(dm.sqGen.FieldByName('CHAVE_ID').AsInteger);
-  sql_inc_lote += ', ' + QuotedStr(edLote.Text);
+  sql_inc_lote += IntToStr(num_lote);
+  if (edLote.Text = '') then
+  begin
+    sql_inc_lote += ', ' + QuotedStr(IntToStr(num_lote));
+  end
+  else begin
+    sql_inc_lote += ', ' + QuotedStr(edLote.Text);
+  end;
   sql_inc_lote += ', ' + IntToStr(codProduto);
   sql_inc_lote += ', ' + QuotedStr(FormatDateTime( 'mm-dd-yyyy', edData.Date));
   sql_inc_lote += ', ' + QuotedStr(FormatDateTime( 'mm-dd-yyyy', edData.Date));

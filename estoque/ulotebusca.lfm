@@ -3,32 +3,116 @@ inherited fLoteBuscar: TfLoteBuscar
   OnCreate = FormCreate
   OnShow = FormShow
   inherited Panel1: TPanel
+    Height = 88
+    ClientHeight = 88
     inherited Edit1: TEdit
+      Height = 27
+      Width = 112
+      Font.Height = -13
       OnKeyPress = Edit1KeyPress
     end
+    inherited Label1: TLabel
+      Height = 15
+      Width = 50
+      Caption = 'Produto'
+      Font.Height = -13
+    end
     inherited Edit2: TEdit
-      Left = 312
-      Width = 96
+      Left = 88
+      Height = 27
+      Top = 48
+      Width = 112
+      Font.Height = -13
+      OnKeyPress = Edit2KeyPress
     end
     inherited chInativo: TCheckBox
+      Left = 752
       Height = 21
-      Width = 69
-    end
-    object Edit3: TEdit[4]
-      Left = 488
-      Height = 31
       Top = 8
-      Width = 104
+      Width = 82
+      Caption = 'Est. Zero'
+      TabOrder = 3
+    end
+    object cbLocal: TComboBox[4]
+      Left = 256
+      Height = 27
+      Top = 48
+      Width = 496
       Font.CharSet = ANSI_CHARSET
-      Font.Height = -16
+      Font.Height = -13
+      Font.Name = '@Malgun Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemHeight = 0
+      OnChange = cbLocalChange
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Label2: TLabel[5]
+      Left = 209
+      Height = 15
+      Top = 48
+      Width = 34
+      Caption = 'Local'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = '@Malgun Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnProdutoProc: TBitBtn[6]
+      Left = 199
+      Height = 27
+      Top = 8
+      Width = 43
+      Caption = '...'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = '@Malgun Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btnProdutoProcClick
+      ParentFont = False
+      TabOrder = 4
+    end
+    object edProduto: TEdit[7]
+      Left = 256
+      Height = 27
+      Top = 8
+      Width = 496
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
       Font.Name = '@Malgun Gothic'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       ParentFont = False
-      TabOrder = 3
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object Label3: TLabel[8]
+      Left = 36
+      Height = 15
+      Top = 48
+      Width = 28
+      Caption = 'Lote'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = '@Malgun Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
     end
   end
   inherited Panel2: TPanel
+    Height = 425
+    Top = 88
+    ClientHeight = 425
+    inherited btnEXC: TImage
+      OnClick = btnEXCClick
+    end
     inherited btnPROC: TImage
       OnClick = btnPROCClick
     end
@@ -37,37 +121,47 @@ inherited fLoteBuscar: TfLoteBuscar
     end
   end
   inherited DBGrid1: TDBGrid
+    Height = 425
+    Top = 88
     Columns = <    
       item
         PickList.Strings = (        )
         Title.Caption = 'Código'
-        Width = 80
+        Width = 70
       end    
       item
         PickList.Strings = (        )
         Title.Caption = 'Produto'
-        Width = 300
+        Width = 220
       end    
       item
         PickList.Strings = (        )
         Title.Caption = 'Lote'
-        Width = 100
+        Width = 80
       end    
       item
         PickList.Strings = (        )
         Title.Caption = 'Estoque'
-        Width = 100
+        Width = 80
       end    
       item
         PickList.Strings = (        )
         Title.Caption = 'Data Fab.'
+        Width = 80
       end    
       item
         PickList.Strings = (        )
         Title.Caption = 'Local'
+        Width = 100
+      end    
+      item
+        PickList.Strings = (        )
+        Title.Caption = 'Transferido'
+        Width = 90
       end>
     DataSource = dsProc
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    OnTitleClick = DBGrid1TitleClick
   end
   object dsProc: TDataSource[3]
     DataSet = dm.sqProc

@@ -394,6 +394,7 @@ var
 begin
   //extrac
   path_exe := ExtractFilePath(ParamStr(0));
+  IBCon.Connected:=False;
   conf := TIniFile.Create(path_exe + 'conf.ini');
   try
     IBCon.DatabaseName := conf.ReadString('DATABASE', 'Name', '');

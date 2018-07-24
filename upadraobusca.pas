@@ -23,6 +23,8 @@ type
     Label1: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
+    procedure btnEXCClick(Sender: TObject);
+    procedure btnSALV1Click(Sender: TObject);
   private
 
   public
@@ -38,6 +40,29 @@ implementation
 
 { TfPadraoBusca }
 
+
+procedure TfPadraoBusca.btnSALV1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfPadraoBusca.btnEXCClick(Sender: TObject);
+var
+  n : integer;
+begin
+  for n := 0 to ComponentCount - 1 do
+  begin
+    if components[n] is TEdit then
+    begin
+      TEdit(components[n]).Text := '';
+    end
+    else if components[n] is TComboBox then
+    begin
+      TComboBox(components[n]).ItemIndex := -1;
+    end;
+  end;
+
+end;
 
 end.
 

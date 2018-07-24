@@ -47,7 +47,9 @@ type
     sqLote_LactoPRODUTO: TStringField;
     sqLote_LactoQUANTIDADE: TFloatField;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure btnCANCClick(Sender: TObject);
     procedure btnINCClick(Sender: TObject);
     procedure btnSALVClick(Sender: TObject);
     procedure cbDestinoChange(Sender: TObject);
@@ -373,44 +375,50 @@ end;
 
 procedure TfLoteTransferir.CheckBox1Change(Sender: TObject);
 begin
-  if (ccusto_origem = 0) then
+  if (CheckBox1.Checked) then
   begin
-    if (dm.sqPlano.Active) then
-      dm.sqPlano.Close;
-    dm.sqPlano.SQL.Clear;
-    dm.sqPlano.SQL.Add('SELECT * FROM PLANO ' +
-      ' WHERE NOME = ' + QuotedStr(cbLocal.Text));
-    dm.sqPlano.Active:=True;
-    if (dm.sqPlano.IsEmpty) then
+    edCodBarra.Enabled:=True;
+    if (ccusto_origem = 0) then
     begin
-      ShowMessage('Local Origem não informado, selecione um na Lista');
-      cbLocal.SetFocus;
-      Abort;
+      if (dm.sqPlano.Active) then
+        dm.sqPlano.Close;
+      dm.sqPlano.SQL.Clear;
+      dm.sqPlano.SQL.Add('SELECT * FROM PLANO ' +
+        ' WHERE NOME = ' + QuotedStr(cbLocal.Text));
+      dm.sqPlano.Active:=True;
+      if (dm.sqPlano.IsEmpty) then
+      begin
+        ShowMessage('Local Origem não informado, selecione um na Lista');
+        cbLocal.SetFocus;
+        Abort;
+      end;
+      ccusto_origem:= dm.sqPlanoCODIGO.AsInteger;
     end;
-    ccusto_origem:= dm.sqPlanoCODIGO.AsInteger;
-  end;
-  if (ccusto_destino = 0) then
-  begin
-    if (dm.sqPlano.Active) then
-      dm.sqPlano.Close;
-    dm.sqPlano.SQL.Clear;
-    dm.sqPlano.SQL.Add('SELECT * FROM PLANO ' +
-      ' WHERE NOME = ' + QuotedStr(cbDestino.Text));
-    dm.sqPlano.Active:=True;
-    if (dm.sqPlano.IsEmpty) then
+    if (ccusto_destino = 0) then
     begin
-      ShowMessage('Local Destino não informado, selecione um na Lista');
-      cbDestino.SetFocus;
-      Abort;
+      if (dm.sqPlano.Active) then
+        dm.sqPlano.Close;
+      dm.sqPlano.SQL.Clear;
+      dm.sqPlano.SQL.Add('SELECT * FROM PLANO ' +
+        ' WHERE NOME = ' + QuotedStr(cbDestino.Text));
+      dm.sqPlano.Active:=True;
+      if (dm.sqPlano.IsEmpty) then
+      begin
+        ShowMessage('Local Destino não informado, selecione um na Lista');
+        cbDestino.SetFocus;
+        Abort;
+      end;
+      ccusto_destino:= dm.sqPlanoCODIGO.AsInteger;
     end;
-    ccusto_destino:= dm.sqPlanoCODIGO.AsInteger;
-  end;
 
-  edCodBarra.Enabled:=CheckBox1.Checked;
-  sqLote_Lacto.Params.ParamByName('PCCUSTO').AsInteger:=ccusto_origem;
-  sqLote_Lacto.Active:=True;
-  lbCount.Caption:=IntToStr(sqLote_Lacto.RecordCount);
-  edCodBarra.SetFocus;
+    edCodBarra.Enabled:=CheckBox1.Checked;
+    sqLote_Lacto.Params.ParamByName('PCCUSTO').AsInteger:=ccusto_origem;
+    sqLote_Lacto.Active:=True;
+    lbCount.Caption:=IntToStr(sqLote_Lacto.RecordCount);
+    edCodBarra.SetFocus;
+  end
+  else
+    edCodBarra.Enabled:=False;
 end;
 
 procedure TfLoteTransferir.btnSALVClick(Sender: TObject);
@@ -458,6 +466,8 @@ begin
   end;
   While not sqLote_Lacto.EOF do
   begin
+    if (sqLote_LactoLOTE.AsString = '') then
+      sqLote_Lacto.Next;
     if (dm.sqMovCODMOVIMENTO.AsInteger = 0) then
     begin
       InsereMov('S');
@@ -552,18 +562,18 @@ begin
       ' AND LOTE = ' + QuotedStr(sqLote_LactoLOTE.AsString) +
       ' AND CODPRODUTO = ' + IntToStr(sqLote_LactoCODPRODUTO.AsInteger) +
       ' AND CCUSTO_SAI = ' + IntToStr(sqLote_LactoCCUSTO_SAI.AsInteger));
-    dm.sTrans.Commit;
-
     ds.DataSet.Active:=False;
-    dsMovDet.DataSet.Active:=False;
     dm.sqMov.Params.ParamByName('PCODMOV').AsInteger:=codMovimento;
     dm.sqMovDet.Params.ParamByName('PCODMOV').AsInteger:=codMovimento;
     //dm.sqLote.Params.ParamByName('PLOTE').AsString:=edLote.Text;
     ds.DataSet.Active:=True;
-    dsMovDet.DataSet.Active:=True;
     sqLote_Lacto.Next;
   end;
   inherited;
+  dm.sTrans.Commit;
+  dsMovDet.DataSet.Active:=False;
+  dsMovDet.DataSet.Active:=True;
+  ShowMessage('Transferencia realizada com sucesso.');
 end;
 
 procedure TfLoteTransferir.cbDestinoChange(Sender: TObject);
@@ -578,12 +588,28 @@ end;
 
 procedure TfLoteTransferir.BitBtn1Click(Sender: TObject);
 begin
-  if (dm.sqMovCODMOVIMENTO.AsInteger = 0) then
+  if (ds.DataSet.State in [dsEdit, dsInsert]) then
   begin
-    InsereMov('S');
+    if (dm.sqMovCODMOVIMENTO.AsInteger = 0) then
+    begin
+      InsereMov('S');
+    end;
+    if ((edLote.Text <> '') or (edCodBarra.Text <> '')) then
+      InsereItem();
   end;
-  if ((edLote.Text <> '') or (edCodBarra.Text <> '')) then
-    InsereItem();
+end;
+
+procedure TfLoteTransferir.BitBtn2Click(Sender: TObject);
+begin
+  dm.IBCon.ExecuteDirect('DELETE FROM LOTE_LACTO ' +
+    ' WHERE CODPRODUTO = ' + IntToStr(sqLote_LactoCODPRODUTO.AsInteger) +
+    '   AND LOTE = ' + QuotedStr(sqLote_LactoLOTE.AsString) +
+    '   AND CCUSTO_ENT = ' + IntToStr(sqLote_LactoCCUSTO_ENT.AsInteger) +
+    '   AND LANCADO = 0');
+  dsMovDet.DataSet.Active:=False;
+  dsMovDet.DataSet.Active:=True;
+  dm.sTrans.Commit;
+  ds.DataSet.Active:=True;
 end;
 
 procedure TfLoteTransferir.BitBtn3Click(Sender: TObject);
@@ -612,6 +638,15 @@ begin
     edQuantidade.Text := FloatToStr(dm.sqLoteESTOQUE.AsFloat);
   end;
 
+end;
+
+procedure TfLoteTransferir.btnCANCClick(Sender: TObject);
+begin
+  inherited;
+  cbDestino.ItemIndex:=-1;
+  cbLocal.ItemIndex:=-1;
+  dsMovDet.DataSet.Active:=False;
+  CheckBox1.Checked:=False;
 end;
 
 procedure TfLoteTransferir.btnINCClick(Sender: TObject);

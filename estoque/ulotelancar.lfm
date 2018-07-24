@@ -1,20 +1,17 @@
 inherited fLoteLancar: TfLoteLancar
-  Height = 449
-  Width = 762
+  Height = 492
   Caption = 'LANÇAR LOTE'
-  ClientHeight = 449
-  ClientWidth = 762
+  ClientHeight = 492
   OnCreate = FormCreate
   OnShow = FormShow
+  Position = poDesktopCenter
   inherited Panel1: TPanel
-    Width = 762
     Caption = 'Lote'
     Font.Height = -29
   end
   inherited Panel2: TPanel
-    Left = 686
-    Height = 399
-    ClientHeight = 399
+    Height = 442
+    ClientHeight = 442
     inherited btnINC: TImage
       OnClick = btnINCClick
     end
@@ -32,10 +29,8 @@ inherited fLoteLancar: TfLoteLancar
     end
   end
   inherited Panel3: TPanel
-    Height = 399
-    Width = 686
-    ClientHeight = 399
-    ClientWidth = 686
+    Height = 442
+    ClientHeight = 442
     object edCodProduto: TEdit[0]
       Left = 80
       Height = 32
@@ -70,8 +65,11 @@ inherited fLoteLancar: TfLoteLancar
     object edLote: TEdit[4]
       Left = 272
       Height = 32
+      Hint = 'Deixe vazio para o sistema criar o Lote.'
       Top = 16
       Width = 168
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
     end
     object btnProdutoProc: TBitBtn[5]
@@ -149,9 +147,9 @@ inherited fLoteLancar: TfLoteLancar
     end
     object DBGrid1: TDBGrid[12]
       Left = 16
-      Height = 221
+      Height = 285
       Top = 155
-      Width = 648
+      Width = 688
       Color = clWindow
       Columns = <      
         item

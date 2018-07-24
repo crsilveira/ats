@@ -12,6 +12,7 @@ type
   { TfPadrao }
 
   TfPadrao = class(TForm)
+    btnClose: TImage;
     ds: TDataSource;
     btnINC: TImage;
     btnEDT: TImage;
@@ -22,7 +23,9 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
+    procedure btnCANC1Click(Sender: TObject);
     procedure btnCANCClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
     procedure btnEDTClick(Sender: TObject);
     procedure btnEXCClick(Sender: TObject);
     procedure btnINCClick(Sender: TObject);
@@ -98,6 +101,16 @@ begin
   ds.DataSet.Cancel;
   ControlaBotoes;
   HabilitaEdicao(false);
+end;
+
+procedure TfPadrao.btnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfPadrao.btnCANC1Click(Sender: TObject);
+begin
+
 end;
 
 procedure TfPadrao.btnEXCClick(Sender: TObject);

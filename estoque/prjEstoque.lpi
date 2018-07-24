@@ -27,27 +27,30 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="ACBrSerial"/>
+        <PackageName Value="frce"/>
       </Item1>
       <Item2>
-        <PackageName Value="ACBrDiversos"/>
+        <PackageName Value="dm_pkg"/>
       </Item2>
       <Item3>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="ACBrSerial"/>
       </Item3>
       <Item4>
-        <PackageName Value="FCL"/>
+        <PackageName Value="ACBrDiversos"/>
       </Item4>
       <Item5>
-        <PackageName Value="dm_pkg"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item5>
       <Item6>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="12">
       <Unit0>
         <Filename Value="prjEstoque.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -55,7 +58,7 @@
       <Unit1>
         <Filename Value="uestoqueadm.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="fEstoqueAdm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEstoqueAdm"/>
@@ -120,6 +123,20 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLoteTransfere"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="uestoquerel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fEstoqueRel"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEstoqueRel"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uloterel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteRel"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteRel"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
