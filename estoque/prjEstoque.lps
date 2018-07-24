@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="22">
+      <Unit0>
+        <Filename Value="prjEstoque.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="78" Y="10"/>
+        <UsageCount Value="130"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uestoqueadm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEstoqueAdm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="68"/>
+        <CursorPos X="30" Y="78"/>
+        <UsageCount Value="130"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../upadrao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fPadrao"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPadrao"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="3" Y="68"/>
+        <UsageCount Value="130"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../upadrao.lfm"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="130"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProduto"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="77"/>
+        <CursorPos X="28" Y="100"/>
+        <UsageCount Value="130"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uprodutoproc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fProdutoProc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProdutoProc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="110"/>
+        <CursorPos Y="131"/>
+        <UsageCount Value="129"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ulotelancar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteLancar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteLancar"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="92" Y="156"/>
+        <UsageCount Value="122"/>
+        <Bookmarks Count="1">
+          <Item0 Y="259" ID="6"/>
+        </Bookmarks>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../upadraobusca.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fPadraoBusca"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPadraoBusca"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos Y="41"/>
+        <UsageCount Value="101"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ulotebusca.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteBuscar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteBusca"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="77"/>
+        <CursorPos Y="91"/>
+        <UsageCount Value="100"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ulotetransfere.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteTransferir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteTransfere"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="453"/>
+        <CursorPos Y="467"/>
+        <UsageCount Value="96"/>
+        <Bookmarks Count="5">
+          <Item0 Y="531" ID="5"/>
+          <Item1 Y="643" ID="1"/>
+          <Item2 Y="248" ID="3"/>
+          <Item3 X="9" Y="467" ID="4"/>
+          <Item4 Y="357" ID="2"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="uprodutocadastro.pas"/>
+        <ComponentName Value="fProdutoCadastro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProdutoCadastro"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="20"/>
+        <UsageCount Value="10"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../datamodule/unit4.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../datamodule/udm.pas"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="451"/>
+        <CursorPos Y="467"/>
+        <UsageCount Value="61"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../datamodule/dm_pkg.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="28" Y="17"/>
+        <UsageCount Value="6"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="/usr/share/fpcsrc/3.0.4/rtl/objpas/classes/classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1970"/>
+        <CursorPos X="14" Y="1863"/>
+        <UsageCount Value="5"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="887"/>
+        <CursorPos X="3" Y="901"/>
+        <UsageCount Value="5"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/dbctrls.pp"/>
+        <UnitName Value="DbCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="3" Y="168"/>
+        <UsageCount Value="5"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3506"/>
+        <CursorPos Y="3519"/>
+        <UsageCount Value="15"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/interfaces/gtk2/gtk2winapi.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8118"/>
+        <CursorPos Y="8131"/>
+        <UsageCount Value="5"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7641"/>
+        <CursorPos Y="7655"/>
+        <UsageCount Value="9"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/customedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="612"/>
+        <CursorPos Y="626"/>
+        <UsageCount Value="9"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/customcombobox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="198"/>
+        <CursorPos Y="212"/>
+        <UsageCount Value="9"/>
+      </Unit21>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="5">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulotelancar.pas"/>
+        <Line Value="129"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="../datamodule/udm.pas"/>
+        <Line Value="447"/>
+      </Item2>
+      <Item3>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulotetransfere.pas"/>
+        <Line Value="422"/>
+      </Item3>
+      <Item4>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulotetransfere.pas"/>
+        <Line Value="466"/>
+      </Item4>
+      <Item5>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulotetransfere.pas"/>
+        <Line Value="234"/>
+      </Item5>
+    </BreakPoints>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="edQuantidade.Text"/>
+      </Item1>
+    </Watches>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="prjEstoque"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <Language Value="0416"/>
+      <StringTable ProductVersion="0.0.0.0"/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="6">
+      <Item1>
+        <PackageName Value="ACBrSerial"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="ACBrDiversos"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="dm_pkg"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
+    </RequiredPackages>
+    <Units Count="10">
+      <Unit0>
+        <Filename Value="prjEstoque.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uestoqueadm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEstoqueAdm"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../upadrao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fPadrao"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPadrao"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../upadrao.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProduto"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uprodutoproc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fProdutoProc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProdutoProc"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ulotelancar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteLancar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteLancar"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../upadraobusca.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fPadraoBusca"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPadraoBusca"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ulotebusca.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteBuscar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteBusca"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ulotetransfere.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteTransferir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteTransfere"/>
+      </Unit9>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="prjEstoque"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <Libraries Value="../datamodule"/>
+      <OtherUnitFiles Value=".."/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

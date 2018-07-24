@@ -1,0 +1,461 @@
+inherited fLoteTransferir: TfLoteTransferir
+  Left = 268
+  Height = 615
+  Width = 933
+  Caption = 'Transferir Lote'
+  ClientHeight = 615
+  ClientWidth = 933
+  OnCreate = nil
+  OnShow = FormShow
+  Position = poDesktopCenter
+  inherited Panel1: TPanel
+    Width = 933
+  end
+  inherited Panel2: TPanel
+    Left = 857
+    Height = 565
+    ClientHeight = 565
+    inherited btnINC: TImage
+      OnClick = btnINCClick
+    end
+    inherited btnSALV: TImage
+      OnClick = btnSALVClick
+    end
+  end
+  inherited Panel3: TPanel
+    Height = 565
+    Width = 857
+    ClientHeight = 565
+    ClientWidth = 857
+    object Label3: TLabel[0]
+      Left = 40
+      Height = 20
+      Top = 24
+      Width = 32
+      Caption = 'Data'
+      ParentColor = False
+    end
+    object edData: TDateTimePicker[1]
+      Left = 80
+      Height = 26
+      Top = 24
+      Width = 160
+      CenturyFrom = 1941
+      MaxDate = 47848
+      MinDate = 43282
+      AutoSize = False
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 1.7E308
+      Time = 1.7E308
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label2: TLabel[2]
+      Left = 24
+      Height = 20
+      Top = 128
+      Width = 30
+      Caption = 'Lote'
+      ParentColor = False
+    end
+    object edLote: TEdit[3]
+      Left = 24
+      Height = 32
+      Top = 152
+      Width = 104
+      OnExit = edLoteExit
+      TabOrder = 1
+    end
+    object Label4: TLabel[4]
+      Left = 152
+      Height = 20
+      Top = 129
+      Width = 81
+      Caption = 'Quantidade'
+      ParentColor = False
+    end
+    object edQuantidade: TEdit[5]
+      Left = 152
+      Height = 32
+      Top = 152
+      Width = 93
+      TabOrder = 2
+    end
+    object Label5: TLabel[6]
+      Left = 20
+      Height = 20
+      Top = 56
+      Width = 53
+      Caption = 'Origem'
+      ParentColor = False
+    end
+    object cbLocal: TComboBox[7]
+      Left = 79
+      Height = 32
+      Hint = 'Local onde o Lote está/será ARMAZENADO'
+      Top = 56
+      Width = 609
+      ItemHeight = 0
+      OnChange = cbLocalChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object DBGrid1: TDBGrid[8]
+      Left = 24
+      Height = 376
+      Top = 184
+      Width = 824
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Lote'
+          Width = 60
+          FieldName = 'LOTE'
+        end      
+        item
+          Title.Caption = 'Origem'
+          Width = 140
+          FieldName = 'ORIGEM'
+        end      
+        item
+          Title.Caption = 'Destino'
+          Width = 140
+          FieldName = 'DESTINO'
+        end      
+        item
+          Title.Caption = 'Cód.'
+          Width = 60
+          FieldName = 'CODPRO'
+        end      
+        item
+          Title.Caption = 'Produto'
+          Width = 220
+          FieldName = 'PRODUTO'
+        end      
+        item
+          Title.Caption = 'Qtde.'
+          Width = 60
+          FieldName = 'QUANTIDADE'
+        end      
+        item
+          Title.Caption = 'Data'
+          Width = 80
+          FieldName = 'DATA_LCTO'
+        end>
+      DataSource = dsMovDet
+      TabOrder = 4
+    end
+    object Label6: TLabel[9]
+      Left = 20
+      Height = 20
+      Top = 96
+      Width = 53
+      Caption = 'Destino'
+      ParentColor = False
+    end
+    object edCodBarra: TEdit[10]
+      Left = 400
+      Height = 32
+      Top = 152
+      Width = 208
+      OnEnter = edCodBarraEnter
+      OnKeyPress = edCodBarraKeyPress
+      TabOrder = 5
+    end
+    object BitBtn1: TBitBtn[11]
+      Left = 637
+      Height = 28
+      Top = 152
+      Width = 25
+      Caption = '+'
+      OnClick = BitBtn1Click
+      TabOrder = 6
+    end
+    object BitBtn2: TBitBtn[12]
+      Left = 661
+      Height = 28
+      Top = 152
+      Width = 27
+      Caption = '-'
+      TabOrder = 7
+    end
+    object BitBtn3: TBitBtn[13]
+      Left = 128
+      Height = 28
+      Top = 152
+      Width = 25
+      Caption = '...'
+      OnClick = BitBtn3Click
+      TabOrder = 8
+    end
+    object Label1: TLabel[14]
+      Left = 424
+      Height = 20
+      Top = 129
+      Width = 94
+      Caption = 'Cód. de Barra'
+      ParentColor = False
+    end
+    object CheckBox1: TCheckBox[15]
+      Left = 248
+      Height = 22
+      Top = 152
+      Width = 147
+      Caption = 'Lançar Cód. Barra'
+      OnChange = CheckBox1Change
+      TabOrder = 9
+    end
+    object lbCount: TLabel[16]
+      Left = 610
+      Height = 20
+      Top = 157
+      Width = 4
+      Caption = '.'
+      ParentColor = False
+    end
+  end
+  object cbDestino: TComboBox[3]
+    Left = 80
+    Height = 32
+    Hint = 'Local onde o Lote está/será ARMAZENADO'
+    Top = 144
+    Width = 608
+    ItemHeight = 0
+    OnChange = cbDestinoChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  inherited ds: TDataSource[4]
+    left = 152
+    top = 8
+  end
+  object dsMovDet: TDataSource[5]
+    DataSet = sqLote_Lacto
+    left = 240
+    top = 8
+  end
+  object ACBrValidador1: TACBrValidador[6]
+    IgnorarChar = './-'
+    left = 398
+    top = 74
+  end
+  object sqLote_Lacto: TSQLQuery[7]
+    FieldDefs = <    
+      item
+        Name = 'CODLCTO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'LOTE'
+        DataType = ftString
+        Precision = -1
+        Size = 13
+      end    
+      item
+        Name = 'CODPRODUTO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'QUANTIDADE'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_LCTO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CCUSTO_SAI'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CCUSTO_ENT'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'LANCADO'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'CODPRO'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'PRODUTO'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'ORIGEM'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end    
+      item
+        Name = 'DESTINO'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end>
+    Database = dm.IBCon
+    Transaction = dm.sTrans
+    SQL.Strings = (
+      'SELECT L.*, p.CODPRO, p.PRODUTO'
+      ' , plo.NOME as ORIGEM, pld.NOME as DESTINO'
+      ' FROM LOTE_LACTO L, PRODUTOS p'
+      'INNER JOIN PLANO plo on plo.CODIGO = L.CCUSTO_SAI'
+      'INNER JOIN PLANO pld on pld.CODIGO = L.CCUSTO_ENT'
+      'WHERE L.CODPRODUTO = p.CODPRODUTO'
+      '  AND L.LANCADO = 0'
+      '  AND L.CCUSTO_SAI = :PCCUSTO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO LOTE_LACTO (LOTE, CODPRODUTO,'
+      '    QUANTIDADE, DATA_LCTO, CCUSTO_SAI, CCUSTO_ENT,'
+      '    LANCADO)'
+      'VALUES ('
+      '    :PLOTE,'
+      '    :PCODPRODUTO,'
+      '    :PQUANTIDADE,'
+      '    :PDATA_LCTO,'
+      '    :PCCUSTO_SAI,'
+      '    :PCCUSTO_ENT,'
+      '    :PLANCADO'
+      ');'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'PCCUSTO'
+        ParamType = ptInput
+      end>
+    left = 56
+    top = 8
+    object sqLote_LactoLOTE: TStringField
+      FieldKind = fkData
+      FieldName = 'LOTE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 13
+    end
+    object sqLote_LactoCODPRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CODPRODUTO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object sqLote_LactoQUANTIDADE: TFloatField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object sqLote_LactoDATA_LCTO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_LCTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqLote_LactoCCUSTO_SAI: TLongintField
+      FieldKind = fkData
+      FieldName = 'CCUSTO_SAI'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object sqLote_LactoCCUSTO_ENT: TLongintField
+      FieldKind = fkData
+      FieldName = 'CCUSTO_ENT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object sqLote_LactoLANCADO: TSmallintField
+      FieldKind = fkData
+      FieldName = 'LANCADO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqLote_LactoCODPRO: TStringField
+      FieldKind = fkData
+      FieldName = 'CODPRO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object sqLote_LactoPRODUTO: TStringField
+      FieldKind = fkData
+      FieldName = 'PRODUTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = True
+      Size = 300
+    end
+    object sqLote_LactoORIGEM: TStringField
+      FieldKind = fkData
+      FieldName = 'ORIGEM'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 200
+    end
+    object sqLote_LactoDESTINO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESTINO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 200
+    end
+  end
+end

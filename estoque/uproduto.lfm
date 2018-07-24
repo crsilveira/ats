@@ -1,0 +1,906 @@
+inherited fProduto: TfProduto
+  Left = 255
+  Height = 531
+  Top = 102
+  Width = 885
+  Caption = 'Produto'
+  ClientHeight = 531
+  ClientWidth = 885
+  OnCreate = FormCreate
+  inherited Panel1: TPanel
+    Width = 885
+    Caption = 'Produtos/Itens'
+    ClientWidth = 885
+    object DBText1: TDBText[0]
+      Left = 26
+      Height = 19
+      Top = 13
+      Width = 65
+      DataField = 'CODPRODUTO'
+      DataSource = ds
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = '@Malgun Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  inherited Panel2: TPanel
+    Left = 809
+    Height = 481
+    ClientHeight = 481
+    inherited btnPROC: TImage
+      OnClick = btnPROCClick
+    end
+    inherited btnSALV: TImage
+      OnClick = btnSALVClick
+    end
+  end
+  inherited Panel3: TPanel
+    Height = 481
+    Width = 809
+    ClientHeight = 481
+    ClientWidth = 809
+    OnClick = Panel3Click
+    object DBEdit1: TDBEdit[0]
+      Left = 704
+      Height = 32
+      Top = 8
+      Width = 80
+      DataField = 'CODPRO'
+      DataSource = ds
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label1: TLabel[1]
+      Left = 608
+      Height = 20
+      Top = 12
+      Width = 109
+      Caption = 'Código Produto'
+      ParentColor = False
+    end
+    object DBEdit2: TDBEdit[2]
+      Left = 8
+      Height = 32
+      Top = 54
+      Width = 328
+      DataField = 'PRODUTO'
+      DataSource = ds
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn[3]
+      Left = 392
+      Height = 23
+      Top = 54
+      Width = 32
+      Caption = '...'
+      TabOrder = 2
+    end
+    object Label2: TLabel[4]
+      Left = 184
+      Height = 20
+      Top = 8
+      Width = 73
+      Caption = 'Cód. Barra'
+      ParentColor = False
+    end
+    object rbCodBarra: TCheckBox[5]
+      Left = 440
+      Height = 22
+      Top = 8
+      Width = 138
+      Caption = 'Criar  Cód. Barra'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object Label3: TLabel[6]
+      Left = 8
+      Height = 20
+      Top = 40
+      Width = 127
+      Caption = 'Descrição Produto'
+      ParentColor = False
+    end
+    object Label4: TLabel[7]
+      Left = 352
+      Height = 20
+      Top = 40
+      Width = 24
+      Caption = 'Un.'
+      ParentColor = False
+    end
+    object Label5: TLabel[8]
+      Left = 440
+      Height = 20
+      Top = 40
+      Width = 81
+      Caption = 'Quantidade'
+      ParentColor = False
+    end
+    object Label6: TLabel[9]
+      Left = 544
+      Height = 20
+      Top = 40
+      Width = 40
+      Caption = '(Kg,L)'
+      ParentColor = False
+    end
+    object Label7: TLabel[10]
+      Left = 664
+      Height = 20
+      Top = 40
+      Width = 62
+      Caption = 'Peso Liq.'
+      ParentColor = False
+    end
+    object Label8: TLabel[11]
+      Left = 8
+      Height = 20
+      Top = 88
+      Width = 135
+      Caption = 'Descrição Adicional'
+      ParentColor = False
+    end
+    object Label9: TLabel[12]
+      Left = 504
+      Height = 20
+      Top = 85
+      Width = 82
+      Caption = 'Embalagem'
+      ParentColor = False
+    end
+    object Label10: TLabel[13]
+      Left = 8
+      Height = 20
+      Top = 133
+      Width = 43
+      Caption = 'Marca'
+      ParentColor = False
+    end
+    object BitBtn2: TBitBtn[14]
+      Left = 184
+      Height = 23
+      Top = 150
+      Width = 32
+      Caption = '...'
+      TabOrder = 4
+    end
+    object BitBtn3: TBitBtn[15]
+      Left = 752
+      Height = 23
+      Top = 151
+      Width = 32
+      Caption = '...'
+      TabOrder = 5
+    end
+    object Label12: TLabel[16]
+      Left = 240
+      Height = 20
+      Top = 133
+      Width = 100
+      Caption = 'Familia/Grupo'
+      ParentColor = False
+    end
+    object Label13: TLabel[17]
+      Left = 512
+      Height = 20
+      Top = 133
+      Width = 147
+      Caption = 'Categoria/Sub-Grupo'
+      ParentColor = False
+    end
+    object GroupBox1: TGroupBox[18]
+      Left = 8
+      Height = 168
+      Top = 184
+      Width = 409
+      Caption = 'Preços'
+      ClientHeight = 147
+      ClientWidth = 407
+      Color = 12105398
+      ParentColor = False
+      TabOrder = 6
+      object Label14: TLabel
+        Left = 8
+        Height = 20
+        Top = 8
+        Width = 107
+        Caption = 'Ultima Entrada:'
+        ParentColor = False
+      end
+      object DBEdit7: TDBEdit
+        Left = 104
+        Height = 32
+        Top = 72
+        Width = 80
+        DataSource = ds
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label15: TLabel
+        Left = 8
+        Height = 20
+        Top = 40
+        Width = 82
+        Caption = 'Preço Custo'
+        ParentColor = False
+      end
+      object DBEdit8: TDBEdit
+        Left = 104
+        Height = 32
+        Top = 8
+        Width = 80
+        DataSource = ds
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label16: TLabel
+        Left = 8
+        Height = 20
+        Top = 72
+        Width = 112
+        Caption = 'V. Compra Atual'
+        ParentColor = False
+        OnClick = Label16Click
+      end
+      object DBEdit15: TDBEdit
+        Left = 104
+        Height = 32
+        Top = 40
+        Width = 80
+        DataSource = ds
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object RadioGroup1: TRadioGroup
+        Left = 16
+        Height = 42
+        Top = 104
+        Width = 337
+        AutoFill = True
+        Caption = 'Formação Preço Venda'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 3
+        ClientHeight = 21
+        ClientWidth = 335
+        Columns = 3
+        Items.Strings = (
+          'Preço Médio'
+          'Últ. Compra'
+          'Fixo'
+        )
+        TabOrder = 3
+      end
+      object Label11: TLabel
+        Left = 213
+        Height = 20
+        Top = 8
+        Width = 75
+        Caption = 'Margem %'
+        ParentColor = False
+      end
+      object Label17: TLabel
+        Left = 213
+        Height = 20
+        Top = 40
+        Width = 79
+        Caption = 'ValorVenda'
+        ParentColor = False
+      end
+      object Label18: TLabel
+        Left = 213
+        Height = 20
+        Top = 72
+        Width = 103
+        Caption = 'ValorV.Minimo'
+        ParentColor = False
+      end
+    end
+    object DBComboBox1: TDBComboBox[19]
+      Left = 72
+      Height = 32
+      Top = 8
+      Width = 100
+      ItemHeight = 0
+      Items.Strings = (
+        'Compra/Venda'
+        'Compra'
+        'Venda'
+        'Serviço'
+        'Locação'
+      )
+      MaxLength = 0
+      TabOrder = 7
+    end
+    object Label19: TLabel[20]
+      Left = 32
+      Height = 20
+      Top = 8
+      Width = 30
+      Caption = 'Tipo'
+      ParentColor = False
+    end
+    object GroupBox2: TGroupBox[21]
+      Left = 415
+      Height = 168
+      Top = 184
+      Width = 369
+      Caption = 'Estoque'
+      ClientHeight = 147
+      ClientWidth = 367
+      Color = 11382189
+      ParentColor = False
+      TabOrder = 8
+      object Label20: TLabel
+        Left = 8
+        Height = 20
+        Top = 8
+        Width = 48
+        Caption = 'Atual..:'
+        ParentColor = False
+      end
+      object Label21: TLabel
+        Left = 8
+        Height = 20
+        Top = 40
+        Width = 82
+        Caption = 'Reposição...'
+        ParentColor = False
+      end
+      object Label22: TLabel
+        Left = 184
+        Height = 20
+        Top = 8
+        Width = 66
+        Caption = 'Minimo...'
+        ParentColor = False
+      end
+      object Label23: TLabel
+        Left = 184
+        Height = 20
+        Top = 40
+        Width = 69
+        Caption = 'Maximo...'
+        ParentColor = False
+      end
+      object DBComboBox2: TDBComboBox
+        Left = 80
+        Height = 32
+        Top = 104
+        Width = 248
+        ItemHeight = 0
+        Items.Strings = (
+          'Tramac'
+        )
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label24: TLabel
+        Left = 8
+        Height = 20
+        Top = 72
+        Width = 79
+        Caption = 'Localização'
+        ParentColor = False
+      end
+      object Label25: TLabel
+        Left = 8
+        Height = 20
+        Top = 104
+        Width = 36
+        Caption = 'Local'
+        ParentColor = False
+      end
+    end
+    object DBEdit25: TDBEdit[22]
+      Left = 376
+      Height = 32
+      Top = 440
+      Width = 80
+      DataSource = ds
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 9
+    end
+    object PageControl1: TPageControl[23]
+      Left = 16
+      Height = 128
+      Top = 352
+      Width = 768
+      ActivePage = TabSheet1
+      TabIndex = 0
+      TabOrder = 10
+      OnChange = PageControl1Change
+      object TabSheet1: TTabSheet
+        Caption = 'Fiscal'
+        ClientHeight = 96
+        ClientWidth = 758
+        OnContextPopup = TabSheet1ContextPopup
+        object GroupBox3: TGroupBox
+          Left = 0
+          Height = 89
+          Top = 8
+          Width = 272
+          Caption = 'Classificação Fiscal'
+          ClientHeight = 68
+          ClientWidth = 270
+          Color = clGray
+          ParentColor = False
+          TabOrder = 0
+          OnClick = GroupBox3Click
+          object Label26: TLabel
+            Left = 0
+            Height = 20
+            Top = 0
+            Width = 34
+            Caption = 'NCM'
+            ParentColor = False
+          end
+          object DBEdit33: TDBEdit
+            Left = 144
+            Height = 32
+            Top = 24
+            Width = 96
+            DataSource = ds
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label27: TLabel
+            Left = 144
+            Height = 20
+            Top = 0
+            Width = 29
+            Caption = 'Cest'
+            ParentColor = False
+          end
+          object DBEdit36: TDBEdit
+            Left = 0
+            Height = 32
+            Top = 24
+            Width = 96
+            DataSource = ds
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object BitBtn7: TBitBtn
+            Left = 96
+            Height = 23
+            Top = 24
+            Width = 32
+            Caption = '...'
+            TabOrder = 2
+          end
+          object BitBtn6: TBitBtn
+            Left = 240
+            Height = 23
+            Top = 24
+            Width = 32
+            Caption = '...'
+            TabOrder = 3
+          end
+        end
+        object GroupBox4: TGroupBox
+          Left = 280
+          Height = 89
+          Top = 8
+          Width = 185
+          Caption = 'Origem Da Mercadoria'
+          ClientHeight = 69
+          ClientWidth = 183
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = '@Microsoft JhengHei'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsUnderline]
+          ParentFont = False
+          TabOrder = 1
+          object DBEdit32: TDBEdit
+            Left = 40
+            Height = 31
+            Top = 12
+            Width = 96
+            DataSource = ds
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+        end
+        object DBEdit27: TDBEdit
+          Left = 608
+          Height = 32
+          Top = 152
+          Width = 80
+          DataSource = ds
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object GroupBox5: TGroupBox
+          Left = 504
+          Height = 89
+          Top = 8
+          Width = 272
+          Caption = 'Aplicação'
+          ClientHeight = 68
+          ClientWidth = 270
+          TabOrder = 3
+          object DBComboBox3: TDBComboBox
+            Left = 8
+            Height = 32
+            Top = 24
+            Width = 240
+            ItemHeight = 0
+            MaxLength = 0
+            TabOrder = 0
+          end
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Impressão'
+        ClientHeight = 96
+        ClientWidth = 758
+        object RadioGroup2: TRadioGroup
+          Left = 8
+          Height = 49
+          Top = 24
+          Width = 120
+          AutoFill = True
+          Caption = 'Impressora'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 28
+          ClientWidth = 118
+          Items.Strings = (
+            'Setor 1'
+          )
+          TabOrder = 0
+        end
+        object RadioGroup4: TRadioGroup
+          Left = 280
+          Height = 49
+          Top = 24
+          Width = 96
+          AutoFill = True
+          Caption = 'Impressora'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 28
+          ClientWidth = 94
+          Items.Strings = (
+            'Setor 3'
+          )
+          TabOrder = 1
+        end
+        object RadioGroup5: TRadioGroup
+          Left = 400
+          Height = 41
+          Top = 32
+          Width = 136
+          AutoFill = True
+          Caption = 'Imprimir'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 2
+          ClientHeight = 20
+          ClientWidth = 134
+          Columns = 2
+          Items.Strings = (
+            'Sim'
+            'Não'
+          )
+          TabOrder = 2
+        end
+        object RadioGroup3: TRadioGroup
+          Left = 152
+          Height = 45
+          Top = 28
+          Width = 112
+          AutoFill = True
+          Caption = 'Impressora'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 24
+          ClientWidth = 110
+          Items.Strings = (
+            'Setor 2'
+          )
+          TabOrder = 3
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Outras Configurações'
+        ClientHeight = 96
+        ClientWidth = 758
+        object CheckGroup1: TCheckGroup
+          Left = 200
+          Height = 64
+          Top = 24
+          Width = 176
+          AutoFill = True
+          Caption = 'Lotes'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.TopBottomSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 2
+          ClientHeight = 43
+          ClientWidth = 174
+          Columns = 2
+          Items.Strings = (
+            'Lote'
+            'Grade'
+          )
+          TabOrder = 0
+          Data = {
+            020000000202
+          }
+        end
+        object RadioGroup6: TRadioGroup
+          Left = 16
+          Height = 64
+          Top = 24
+          Width = 153
+          AutoFill = True
+          Caption = 'Gera Despesa'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 2
+          ClientHeight = 43
+          ClientWidth = 151
+          Columns = 2
+          Items.Strings = (
+            'Sim'
+            'Não'
+          )
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object DBEdit3: TDBEdit[3]
+    Left = 344
+    Height = 32
+    Top = 104
+    Width = 48
+    DataField = 'UNIDADEMEDIDA'
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit[4]
+    Left = 240
+    Height = 32
+    Top = 200
+    Width = 216
+    DataField = 'MARCA'
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit[5]
+    Left = 8
+    Height = 32
+    Top = 200
+    Width = 176
+    DataField = 'FAMILIA'
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit[6]
+    Left = 512
+    Height = 32
+    Top = 200
+    Width = 240
+    DataField = 'CATEGORIA'
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object DBEdit9: TDBEdit[7]
+    Left = 248
+    Height = 32
+    Top = 56
+    Width = 192
+    DataField = 'COD_BARRA'
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object DBEdit10: TDBEdit[8]
+    Left = 440
+    Height = 32
+    Top = 104
+    Width = 80
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object DBEdit11: TDBEdit[9]
+    Left = 544
+    Height = 32
+    Top = 104
+    Width = 96
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 9
+  end
+  object DBEdit12: TDBEdit[10]
+    Left = 664
+    Height = 32
+    Top = 104
+    Width = 120
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 10
+  end
+  object DBEdit13: TDBEdit[11]
+    Left = 8
+    Height = 32
+    Top = 152
+    Width = 480
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 11
+  end
+  object DBEdit14: TDBEdit[12]
+    Left = 512
+    Height = 32
+    Top = 152
+    Width = 272
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 12
+  end
+  object DBEdit16: TDBEdit[13]
+    Left = 304
+    Height = 32
+    Top = 256
+    Width = 88
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 13
+  end
+  object DBEdit17: TDBEdit[14]
+    Left = 664
+    Height = 32
+    Top = 288
+    Width = 80
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 14
+  end
+  object BitBtn4: TBitBtn[15]
+    Left = 456
+    Height = 23
+    Top = 200
+    Width = 32
+    Caption = '...'
+    TabOrder = 15
+  end
+  object DBEdit18: TDBEdit[16]
+    Left = 304
+    Height = 32
+    Top = 320
+    Width = 88
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 16
+  end
+  object DBEdit20: TDBEdit[17]
+    Left = 496
+    Height = 32
+    Top = 288
+    Width = 80
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 17
+  end
+  object DBEdit21: TDBEdit[18]
+    Left = 304
+    Height = 32
+    Top = 288
+    Width = 88
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 18
+  end
+  object DBEdit22: TDBEdit[19]
+    Left = 496
+    Height = 32
+    Top = 320
+    Width = 248
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 19
+  end
+  object DBEdit23: TDBEdit[20]
+    Left = 664
+    Height = 32
+    Top = 256
+    Width = 80
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 20
+  end
+  object DBEdit24: TDBEdit[21]
+    Left = 496
+    Height = 32
+    Top = 256
+    Width = 80
+    DataSource = ds
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 21
+  end
+  inherited ds: TDataSource[22]
+    left = 656
+    top = 0
+  end
+  object ACBrValidador1: TACBrValidador[23]
+    TipoDocto = docGTIN
+    IgnorarChar = './-'
+    left = 696
+  end
+end

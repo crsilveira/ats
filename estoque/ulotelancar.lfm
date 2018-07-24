@@ -1,0 +1,195 @@
+inherited fLoteLancar: TfLoteLancar
+  Height = 449
+  Width = 762
+  Caption = 'LANÇAR LOTE'
+  ClientHeight = 449
+  ClientWidth = 762
+  OnCreate = FormCreate
+  OnShow = FormShow
+  inherited Panel1: TPanel
+    Width = 762
+    Caption = 'Lote'
+    Font.Height = -29
+  end
+  inherited Panel2: TPanel
+    Left = 686
+    Height = 399
+    ClientHeight = 399
+    inherited btnINC: TImage
+      OnClick = btnINCClick
+    end
+    inherited btnEDT: TImage
+      OnClick = btnEDTClick
+    end
+    inherited btnPROC: TImage
+      OnClick = btnPROCClick
+    end
+    inherited btnCANC: TImage
+      OnClick = btnCANCClick
+    end
+    inherited btnSALV: TImage
+      OnClick = btnSALVClick
+    end
+  end
+  inherited Panel3: TPanel
+    Height = 399
+    Width = 686
+    ClientHeight = 399
+    ClientWidth = 686
+    object edCodProduto: TEdit[0]
+      Left = 80
+      Height = 32
+      Top = 64
+      Width = 80
+      OnExit = edCodProdutoExit
+      TabOrder = 3
+    end
+    object Label1: TLabel[1]
+      Left = 17
+      Height = 20
+      Top = 64
+      Width = 56
+      Caption = 'Produto'
+      ParentColor = False
+    end
+    object edProduto: TEdit[2]
+      Left = 200
+      Height = 32
+      Top = 64
+      Width = 456
+      TabOrder = 4
+    end
+    object Label2: TLabel[3]
+      Left = 216
+      Height = 20
+      Top = 16
+      Width = 30
+      Caption = 'Lote'
+      ParentColor = False
+    end
+    object edLote: TEdit[4]
+      Left = 272
+      Height = 32
+      Top = 16
+      Width = 168
+      TabOrder = 1
+    end
+    object btnProdutoProc: TBitBtn[5]
+      Left = 158
+      Height = 30
+      Top = 65
+      Width = 43
+      Caption = '...'
+      OnClick = btnProdutoProcClick
+      TabOrder = 6
+    end
+    object edData: TDateTimePicker[6]
+      Left = 80
+      Height = 26
+      Top = 16
+      Width = 107
+      CenturyFrom = 1941
+      MaxDate = 47848
+      MinDate = 43009
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 1.7E308
+      Time = 1.7E308
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label3: TLabel[7]
+      Left = 8
+      Height = 20
+      Top = 16
+      Width = 65
+      Caption = 'Data Fab.'
+      ParentColor = False
+    end
+    object Label4: TLabel[8]
+      Left = 464
+      Height = 20
+      Top = 16
+      Width = 81
+      Caption = 'Quantidade'
+      ParentColor = False
+    end
+    object edQuantidade: TEdit[9]
+      Left = 560
+      Height = 32
+      Top = 16
+      Width = 93
+      TabOrder = 2
+    end
+    object Label5: TLabel[10]
+      Left = 37
+      Height = 20
+      Top = 120
+      Width = 36
+      Caption = 'Local'
+      ParentColor = False
+    end
+    object cbLocal: TComboBox[11]
+      Left = 80
+      Height = 32
+      Hint = 'Local onde o Lote está/será ARMAZENADO'
+      Top = 112
+      Width = 574
+      ItemHeight = 0
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+    end
+    object DBGrid1: TDBGrid[12]
+      Left = 16
+      Height = 221
+      Top = 155
+      Width = 648
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Lote'
+          Width = 100
+          FieldName = 'LOTE'
+        end      
+        item
+          Title.Caption = 'Código'
+          Width = 80
+          FieldName = 'CODPRO'
+        end      
+        item
+          Title.Caption = 'Produto'
+          Width = 240
+          FieldName = 'PRODUTO'
+        end      
+        item
+          Title.Caption = 'Estoque'
+          Width = 80
+          FieldName = 'ESTOQUE'
+        end      
+        item
+          Title.Caption = 'Data'
+          Width = 100
+          FieldName = 'DATAFABRICACAO'
+        end>
+      DataSource = dsLote
+      TabOrder = 7
+    end
+  end
+  inherited ds: TDataSource
+    left = 184
+    top = 8
+  end
+  object dsLote: TDataSource[4]
+    DataSet = dm.sqLote
+    left = 62
+    top = 13
+  end
+end
