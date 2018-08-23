@@ -6,40 +6,63 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, DBGrids, uPadrao, uDm;
+  Dialogs, ExtCtrls, StdCtrls, Buttons, DBGrids, DbCtrls, uPadrao,
+  ACBrValidador, ACBrETQ, uDm, ACBrDevice;
 
 type
 
   { TfLoteLancar }
 
   TfLoteLancar = class(TfPadrao)
+    ACBrETQ1: TACBrETQ;
+    ACBrValidador1: TACBrValidador;
+    btnImp: TBitBtn;
+    btnAmostra: TBitBtn;
     btnProdutoProc: TBitBtn;
+    cbBackFeed: TComboBox;
+    cbDPI: TComboBox;
     cbLocal: TComboBox;
+    cbModelo: TComboBox;
+    cbPorta: TComboBox;
+    DBText1: TDBText;
     dsLote: TDataSource;
     DBGrid1: TDBGrid;
+    eAvanco: TEdit;
     edData: TDateTimePicker;
     edCodProduto: TEdit;
     edQuantidade: TEdit;
     edProduto: TEdit;
     edLote: TEdit;
+    eTemperatura: TEdit;
+    eVelocidade: TEdit;
     Label1: TLabel;
+    Label14: TLabel;
+    Label16: TLabel;
     Label2: TLabel;
+    Label25: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    procedure btnAmostraClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure btnImpClick(Sender: TObject);
     procedure btnCANCClick(Sender: TObject);
     procedure btnEDTClick(Sender: TObject);
     procedure btnINCClick(Sender: TObject);
     procedure btnPROCClick(Sender: TObject);
     procedure btnProdutoProcClick(Sender: TObject);
     procedure btnSALVClick(Sender: TObject);
+    procedure cbModeloChange(Sender: TObject);
+    procedure cbPortaChange(Sender: TObject);
     procedure edCodProdutoChange(Sender: TObject);
     procedure edCodProdutoExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
     procedure Panel4Click(Sender: TObject);
   private
     codProduto: Integer;
+    procedure AtivarACBrETQ1 ;
   public
 
   end;
@@ -55,9 +78,11 @@ uses uProdutoProc, uLoteBusca;
 
 { TfLoteLancar }
 
+
 procedure TfLoteLancar.FormShow(Sender: TObject);
 begin
   inherited;
+  cbPorta.Enabled:= true;
   if (dm.sqPlano.Active) then
     dm.sqPlano.Close;
   dm.sqPlano.SQL.Clear;
@@ -71,6 +96,13 @@ begin
     dm.sqPlano.Next;
   end;
 end;
+
+procedure TfLoteLancar.Panel3Click(Sender: TObject);
+begin
+
+end;
+
+
 
 procedure TfLoteLancar.Panel4Click(Sender: TObject);
 begin
@@ -93,6 +125,8 @@ begin
   begin
     dsLote.DataSet.Active:=False;
     dm.sqLote.Params.ParamByName('PLOTE').AsString:=fLoteBuscar.codigoLote;
+    dm.sqLote.Params.ParamByName('PCODPRODUTO').AsInteger:=fLoteBuscar.LoteCodProduto;
+    dm.sqLote.Params.ParamByName('PCCUSTO').AsInteger:=fLoteBuscar.LoteCCusto;
     dsLOte.DataSet.Active:=True;
   end;
 end;
@@ -119,6 +153,90 @@ procedure TfLoteLancar.btnCANCClick(Sender: TObject);
 begin
   inherited;
 end;
+
+procedure TfLoteLancar.btnImpClick(Sender: TObject);
+var barcode: String;
+  lote_bar: string;
+  descricao , empresa , data_lote: string ;
+begin
+  barcode := FormatFloat('00000', dm.sqLoteCODPRODUTO.AsInteger);
+  barcode := '21' + barcode;
+  lote_bar := FormatFloat('00000', dm.sqLoteCODLOTE.AsInteger);
+  barcode := barcode + lote_bar;
+  ACBrValidador1.Documento   := barcode;
+  ACBrValidador1.Complemento := '0';
+  ACBrValidador1.IgnorarChar := './-';
+  ACBrValidador1.Validar;
+  lote_bar := ACBrValidador1.DigitoCalculado;
+  //barcode := Copy(barcode,1,12)+lote_bar;
+
+  dm.sqProc.Close;
+  dm.sqProc.SQL.Clear;
+  dm.sqProc.SQL.Add('SELECT EMPRESA FROM EMPRESA');
+  dm.sqProc.Open;
+  empresa := dm.sqProc.FieldByName('EMPRESA').AsString;
+
+  AtivarACBrETQ1;
+  with ACBrETQ1 do
+  begin
+    descricao := dm.sqLoteCODPRO.AsString ;
+    data_lote := FormatDateTime( 'mm-dd-yyyy', dm.sqLoteDATAFABRICACAO.AsDateTime);
+    ImprimirTexto(orNormal, 0, 2, 2, 10, 85, empresa, 0, True);
+    ImprimirTexto(orNormal, 0, 1, 2, 23, 85, data_lote);
+    ImprimirTexto(orNormal, 0, 1, 2, 23, 245, Copy(descricao,1,60));
+    ImprimirBarras(orNormal, 'E30', '1', '2', 38, 110, barcode, 50, becSIM);
+    Imprimir((dm.sqLoteESTOQUE.AsInteger));
+    Desativar;
+  end;
+
+
+
+end;
+
+procedure TfLoteLancar.btnAmostraClick(Sender: TObject);
+var barcode: String;
+  lote_bar: string;
+  descricao , empresa , data_lote: string ;
+begin
+  barcode := FormatFloat('00000', dm.sqLoteCODPRODUTO.AsInteger);
+  barcode := '21' + barcode;
+  lote_bar := FormatFloat('00000', dm.sqLoteCODLOTE.AsInteger);
+  barcode := barcode + lote_bar;
+  ACBrValidador1.Documento   := barcode;
+  ACBrValidador1.Complemento := '0';
+  ACBrValidador1.IgnorarChar := './-';
+  ACBrValidador1.Validar;
+  lote_bar := ACBrValidador1.DigitoCalculado;
+  //barcode := Copy(barcode,1,12)+lote_bar;
+
+  dm.sqProc.Close;
+  dm.sqProc.SQL.Clear;
+  dm.sqProc.SQL.Add('SELECT EMPRESA FROM EMPRESA');
+  dm.sqProc.Open;
+  empresa := dm.sqProc.FieldByName('EMPRESA').AsString;
+
+  AtivarACBrETQ1;
+  with ACBrETQ1 do
+  begin
+    descricao := dm.sqLoteCODPRO.AsString ;
+    data_lote := FormatDateTime( 'mm-dd-yyyy', dm.sqLoteDATAFABRICACAO.AsDateTime);
+    ImprimirTexto(orNormal, 0, 2, 2, 10, 85, empresa, 0, True);
+    ImprimirTexto(orNormal, 0, 1, 2, 23, 85, data_lote);
+    ImprimirTexto(orNormal, 0, 1, 2, 23, 245, Copy(descricao,1,60));
+    ImprimirBarras(orNormal, 'E30', '1', '2', 38, 110, barcode, 50, becSIM);
+    Imprimir((1));
+    Desativar;
+  end;
+
+end;
+
+procedure TfLoteLancar.btnCloseClick(Sender: TObject);
+begin
+  inherited;
+  dsLote.DataSet.Close;
+end;
+
+
 
 procedure TfLoteLancar.btnSALVClick(Sender: TObject);
 var num_compra: Integer;
@@ -168,7 +286,7 @@ begin
   begin
     edLote.Text := IntToStr(num_lote);
   end;
-
+  fLoteBuscar.codigoLote := '';
   fLoteBuscar.busca(edLote.Text, IntToStr(codProduto), IntToStr(dm.sqPlanoCODIGO.AsInteger));
   if (fLoteBuscar.codigoLote <> '') then
   begin
@@ -270,6 +388,16 @@ begin
   inherited;
 end;
 
+procedure TfLoteLancar.cbModeloChange(Sender: TObject);
+begin
+
+end;
+
+procedure TfLoteLancar.cbPortaChange(Sender: TObject);
+begin
+
+end;
+
 procedure TfLoteLancar.edCodProdutoChange(Sender: TObject);
 begin
 
@@ -289,6 +417,23 @@ procedure TfLoteLancar.FormCreate(Sender: TObject);
 begin
   ds.DataSet:=dm.sqMov;
   inherited;
+end;
+
+
+procedure TfLoteLancar.AtivarACBrETQ1;
+begin
+  with ACBrETQ1 do
+  begin
+     DPI           := TACBrETQDPI(cbDPI.ItemIndex);
+     Modelo        := TACBrETQModelo(cbModelo.ItemIndex);
+     Porta         := cbPorta.Text;
+    // LimparMemoria := ckMemoria.Checked;
+    // Temperatura   := StrToInt(eTemperatura.Text);
+     Velocidade    := StrToInt(eVelocidade.Text);
+     BackFeed      := TACBrETQBackFeed(cbBackFeed.ItemIndex);
+
+     Ativar;
+  end;
 end;
 
 end.

@@ -27,30 +27,33 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="7">
+    <RequiredPackages Count="8">
       <Item1>
-        <PackageName Value="frce"/>
+        <PackageName Value="lazreport"/>
       </Item1>
       <Item2>
-        <PackageName Value="dm_pkg"/>
+        <PackageName Value="frce"/>
       </Item2>
       <Item3>
-        <PackageName Value="ACBrSerial"/>
+        <PackageName Value="dm_pkg"/>
       </Item3>
       <Item4>
-        <PackageName Value="ACBrDiversos"/>
+        <PackageName Value="ACBrSerial"/>
       </Item4>
       <Item5>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="ACBrDiversos"/>
       </Item5>
       <Item6>
-        <PackageName Value="FCL"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item6>
       <Item7>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item7>
+      <Item8>
+        <PackageName Value="LCL"/>
+      </Item8>
     </RequiredPackages>
-    <Units Count="12">
+    <Units Count="13">
       <Unit0>
         <Filename Value="prjEstoque.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -127,6 +130,7 @@
         <Filename Value="uestoquerel.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="fEstoqueRel"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEstoqueRel"/>
       </Unit10>
@@ -134,9 +138,18 @@
         <Filename Value="uloterel.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="fLoteRel"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLoteRel"/>
       </Unit11>
+      <Unit12>
+        <Filename Value="uloteporprodutorel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLotePorProdutoRel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLotePorProdutoRel"/>
+      </Unit12>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

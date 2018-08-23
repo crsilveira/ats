@@ -7,7 +7,7 @@ object dm: Tdm
   Width = 596
   PPI = 96
   object IBCon: TIBConnection
-    Connected = True
+    Connected = False
     LoginPrompt = False
     DatabaseName = '/home/publico/bd/sge_anfer.fdb'
     KeepConnection = False

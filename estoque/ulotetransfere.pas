@@ -39,6 +39,7 @@ type
     sqLote_LactoCCUSTO_SAI: TLongintField;
     sqLote_LactoCODPRO: TStringField;
     sqLote_LactoCODPRODUTO: TLongintField;
+    sqLote_LactoDATAFABRICACAO: TDateField;
     sqLote_LactoDATA_LCTO: TDateField;
     sqLote_LactoDESTINO: TStringField;
     sqLote_LactoLANCADO: TSmallintField;
@@ -68,6 +69,7 @@ type
     ccusto_destino: Integer;
     codMovimento: Integer;
     codLoteID: Integer;
+    lote_dataf: TDate;
     procedure InsereItem();
     procedure InsereMov(TipoMov: String);
     procedure buscaProduto(codigoBusca: String);
@@ -298,7 +300,7 @@ begin
   sql_inc_lote += IntToStr(dm.sqGen.FieldByName('CHAVE_ID').AsInteger);
   sql_inc_lote += ', ' + QuotedStr(sqLote_LactoLOTE.AsString);
   sql_inc_lote += ', ' + IntToStr(sqLote_LactoCODPRODUTO.AsInteger);
-  sql_inc_lote += ', ' + QuotedStr(FormatDateTime( 'mm-dd-yyyy', sqLote_LactoDATA_LCTO.AsDateTime));
+  sql_inc_lote += ', ' + QuotedStr(FormatDateTime( 'mm-dd-yyyy', lote_dataf));
   sql_inc_lote += ', ' + QuotedStr(FormatDateTime( 'mm-dd-yyyy', sqLote_LactoDATA_LCTO.AsDateTime));
   qtde_float := sqLote_LactoQUANTIDADE.AsFloat;
   DecimalSeparator := '.';
@@ -430,14 +432,16 @@ begin
   sqlproc := 'SELECT L.LOTE, L.CODPRODUTO, SUM(L.QUANTIDADE) QUANTIDADE,' +
     ' L.DATA_LCTO, L.CCUSTO_SAI, L.CCUSTO_ENT, L.LANCADO, p.CODPRO,' +
     ' p.PRODUTO, plo.NOME as ORIGEM, pld.NOME as DESTINO ' +
-    ' FROM LOTE_LACTO L, PRODUTOS p ' +
+    ' , LT.DATAFABRICACAO ' +
+    ' FROM LOTE_LACTO L, PRODUTOS p, LOTES LT ' +
     ' INNER JOIN PLANO plo on plo.CODIGO = L.CCUSTO_SAI ' +
     ' INNER JOIN PLANO pld on pld.CODIGO = L.CCUSTO_ENT ' +
     ' WHERE L.CODPRODUTO = p.CODPRODUTO ' +
+    '   AND LT.LOTE = L.LOTE ' +
     '   AND L.LANCADO = 0 ' +
     '   AND L.CCUSTO_SAI = :PCCUSTO ' +
     ' GROUP BY L.LOTE, L.CODPRODUTO,L.DATA_LCTO, L.CCUSTO_SAI,L.CCUSTO_ENT,' +
-    ' L.LANCADO, p.CODPRO, p.PRODUTO, plo.NOME, pld.NOME ';
+    ' L.LANCADO, p.CODPRO, p.PRODUTO, plo.NOME, pld.NOME, LT.DATAFABRICACAO  ';
   sqLote_Lacto.Active:=False;
   sqLote_Lacto.SQL.Clear;
   sqLote_Lacto.SQL.Add(sqlproc);
@@ -464,6 +468,7 @@ begin
     sqLote_Lacto.Active:=False;
     sqLote_Lacto.Active:=True;
   end;
+  lote_dataf := sqLote_Lacto.FieldByName('DATAFABRICACAO').AsDateTime;
   While not sqLote_Lacto.EOF do
   begin
     if (sqLote_LactoLOTE.AsString = '') then

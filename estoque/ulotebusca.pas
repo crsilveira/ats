@@ -22,6 +22,7 @@ type
     procedure btnEXCClick(Sender: TObject);
     procedure btnPROCClick(Sender: TObject);
     procedure btnProdutoProcClick(Sender: TObject);
+    procedure btnSALV1Click(Sender: TObject);
     procedure btnSALVClick(Sender: TObject);
     procedure cbLocalChange(Sender: TObject);
     procedure DBGrid1TitleClick(Column: TColumn);
@@ -68,6 +69,11 @@ begin
   edit1.Text     := fProdutoProc.codProd;
   edProduto.Text := fProdutoProc.produto;
   LoteCodProduto := fProdutoProc.codProduto;
+end;
+
+procedure TfLoteBuscar.btnSALV1Click(Sender: TObject);
+begin
+  inherited;
 end;
 
 procedure TfLoteBuscar.btnSALVClick(Sender: TObject);
@@ -188,7 +194,7 @@ begin
   begin
     sqlProc += ' AND LOTES.CODPRODUTO  = ' + produtoCod;
   end;
-  if (cbLocal.Text = '') then
+  if ((cbLocal.Text = '') and (CCusto = '')) then
     CCusto := '0';
   if ((CCusto <> '') and (CCusto <> '0')) then
   begin

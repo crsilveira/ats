@@ -8,7 +8,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, datetimectrls, uEstoqueAdm, uProduto, uProdutoProc, uDm, dm_pkg,
-  uLoteLancar, uPadraoBusca, uLoteBusca, uLoteTransfere, uEstoqueRel, uLoteRel;
+  uLoteLancar, uPadraoBusca, uLoteBusca, uLoteTransfere, uEstoqueRel, uLoteRel,
+  uLotePorProdutoRel;
 
 {$R *.res}
 
@@ -25,6 +26,7 @@ begin
   Application.CreateForm(TfLoteTransferir, fLoteTransferir);
   Application.CreateForm(TfEstoqueRel, fEstoqueRel);
   Application.CreateForm(TfLoteRel, fLoteRel);
+  Application.CreateForm(TfLotePorProdutoRel, fLotePorProdutoRel);
   Application.Run;
 end.
 

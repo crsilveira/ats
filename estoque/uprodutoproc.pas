@@ -109,9 +109,13 @@ end;
 procedure TfProdutoProc.FormCreate(Sender: TObject);
 begin
   DBGrid1.Columns[0].FieldName:='CODPRO';
+  DBGrid1.Columns[0].Title.Caption := 'Cód.';
   DBGrid1.Columns[1].FieldName:='PRODUTO';
+  DBGrid1.Columns[1].Title.Caption := 'Descrição';
   DBGrid1.Columns[2].FieldName:='UNIDADEMEDIDA';
+  DBGrid1.Columns[2].Title.Caption := 'Un.';
   DBGrid1.Columns[3].FieldName:='ESTOQUEATUAL';
+  DBGrid1.Columns[3].Title.Caption := 'Estoque';
 end;
 
 procedure TfProdutoProc.FormKeyPress(Sender: TObject; var Key: char);
@@ -149,13 +153,13 @@ begin
     dm.sqProc.Close;
   dm.sqProc.SQL.Clear;
   dm.sqProc.SQL.Add(sqlProc);
-
   dsProc.DataSet.Active:=True;
   if (not dm.sqProc.IsEmpty) then
   begin
     codProduto := dm.sqProc.FieldByName('CODPRODUTO').AsInteger;
     produto    := dm.sqProc.FieldByName('PRODUTO').AsString;
     codProd    := dm.sqProc.FieldByName('CODPRO').AsString;
+    TNumericField(dm.sqProc.FieldByName('ESTOQUEATUAL')).DisplayFormat:=',##0.0';
   end;
 end;
 

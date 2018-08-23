@@ -27,9 +27,8 @@ inherited fLoteBuscar: TfLoteBuscar
     end
     inherited chInativo: TCheckBox
       Left = 752
-      Height = 21
       Top = 8
-      Width = 82
+      Width = 84
       Caption = 'Est. Zero'
       TabOrder = 3
     end
@@ -118,6 +117,9 @@ inherited fLoteBuscar: TfLoteBuscar
     end
     inherited btnSALV: TImage
       OnClick = btnSALVClick
+    end
+    inherited btnSALV1: TImage
+      OnClick = btnSALV1Click
     end
   end
   inherited DBGrid1: TDBGrid

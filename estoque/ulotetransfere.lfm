@@ -326,16 +326,23 @@ inherited fLoteTransferir: TfLoteTransferir
         DataType = ftString
         Precision = -1
         Size = 200
+      end    
+      item
+        Name = 'DATAFABRICACAO'
+        DataType = ftDate
+        Precision = -1
       end>
     Database = dm.IBCon
     Transaction = dm.sTrans
     SQL.Strings = (
       'SELECT L.*, p.CODPRO, p.PRODUTO'
       ' , plo.NOME as ORIGEM, pld.NOME as DESTINO'
-      ' FROM LOTE_LACTO L, PRODUTOS p'
+      ' , LT.DATAFABRICACAO'
+      ' FROM LOTE_LACTO L, PRODUTOS p, LOTES LT'
       'INNER JOIN PLANO plo on plo.CODIGO = L.CCUSTO_SAI'
       'INNER JOIN PLANO pld on pld.CODIGO = L.CCUSTO_ENT'
       'WHERE L.CODPRODUTO = p.CODPRODUTO'
+      '  AND LT.LOTE = L.LOTE'
       '  AND L.LANCADO = 0'
       '  AND L.CCUSTO_SAI = :PCCUSTO'
     )
@@ -467,6 +474,15 @@ inherited fLoteTransferir: TfLoteTransferir
       ReadOnly = False
       Required = True
       Size = 200
+    end
+    object sqLote_LactoDATAFABRICACAO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATAFABRICACAO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
     end
   end
 end

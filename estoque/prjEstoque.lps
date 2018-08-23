@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="27">
+    <Units Count="30">
       <Unit0>
         <Filename Value="prjEstoque.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="78" Y="10"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="157"/>
       </Unit0>
       <Unit1>
         <Filename Value="uestoqueadm.pas"/>
@@ -20,7 +20,7 @@
         <UnitName Value="uEstoqueAdm"/>
         <TopLine Value="79"/>
         <CursorPos X="14" Y="81"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="157"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -34,7 +34,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="133"/>
         <CursorPos Y="134"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="157"/>
       </Unit2>
       <Unit3>
         <Filename Value="../upadrao.lfm"/>
@@ -43,7 +43,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="157"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit3>
       <Unit4>
@@ -56,7 +56,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="77"/>
         <CursorPos X="28" Y="100"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="157"/>
       </Unit4>
       <Unit5>
         <Filename Value="uprodutoproc.pas"/>
@@ -68,7 +68,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="110"/>
         <CursorPos Y="131"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="156"/>
       </Unit5>
       <Unit6>
         <Filename Value="ulotelancar.pas"/>
@@ -77,13 +77,15 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLoteLancar"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="119"/>
-        <CursorPos X="9" Y="133"/>
-        <UsageCount Value="140"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="297"/>
+        <CursorPos Y="319"/>
+        <UsageCount Value="149"/>
         <Bookmarks Count="1">
-          <Item0 Y="275" ID="6"/>
+          <Item0 Y="282" ID="6"/>
         </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="../upadraobusca.pas"/>
@@ -95,7 +97,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="48" Y="61"/>
-        <UsageCount Value="119"/>
+        <UsageCount Value="128"/>
       </Unit7>
       <Unit8>
         <Filename Value="ulotebusca.pas"/>
@@ -104,11 +106,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLoteBusca"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="188"/>
-        <CursorPos X="20" Y="142"/>
-        <UsageCount Value="118"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="170"/>
+        <CursorPos Y="189"/>
+        <UsageCount Value="127"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="ulotetransfere.pas"/>
@@ -117,22 +120,60 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLoteTransfere"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="602"/>
-        <CursorPos X="26" Y="612"/>
-        <FoldState Value=" T3j40M033215"/>
-        <UsageCount Value="114"/>
+        <TopLine Value="458"/>
+        <CursorPos Y="471"/>
+        <UsageCount Value="123"/>
         <Bookmarks Count="5">
-          <Item0 Y="541" ID="5"/>
-          <Item1 Y="678" ID="1"/>
-          <Item2 Y="250" ID="3"/>
-          <Item3 X="9" Y="477" ID="4"/>
-          <Item4 Y="359" ID="2"/>
+          <Item0 Y="546" ID="5"/>
+          <Item1 Y="252" ID="3"/>
+          <Item2 X="9" Y="482" ID="4"/>
+          <Item3 Y="361" ID="2"/>
+          <Item4 X="3" Y="298" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
       <Unit10>
+        <Filename Value="uestoquerel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fEstoqueRel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEstoqueRel"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="30"/>
+        <CursorPos X="26" Y="54"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uloterel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLoteRel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLoteRel"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="3" Y="54"/>
+        <UsageCount Value="29"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="uloteporprodutorel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fLotePorProdutoRel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLotePorProdutoRel"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <CursorPos Y="47"/>
+        <UsageCount Value="29"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="uprodutocadastro.pas"/>
         <ComponentName Value="fProdutoCadastro"/>
         <HasResources Value="True"/>
@@ -141,92 +182,93 @@
         <EditorIndex Value="-1"/>
         <CursorPos X="24" Y="20"/>
         <UsageCount Value="9"/>
-      </Unit10>
-      <Unit11>
+      </Unit13>
+      <Unit14>
         <Filename Value="../datamodule/unit4.pas"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
         <UsageCount Value="9"/>
-      </Unit11>
-      <Unit12>
+      </Unit14>
+      <Unit15>
         <Filename Value="../datamodule/udm.pas"/>
         <ComponentName Value="dm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uDM"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="384"/>
         <CursorPos X="12" Y="387"/>
-        <UsageCount Value="63"/>
+        <UsageCount Value="65"/>
         <Loaded Value="True"/>
-      </Unit12>
-      <Unit13>
+        <LoadedDesigner Value="True"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="../datamodule/dm_pkg.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="28" Y="17"/>
         <UsageCount Value="5"/>
-      </Unit13>
-      <Unit14>
+      </Unit16>
+      <Unit17>
         <Filename Value="/usr/share/fpcsrc/3.0.4/rtl/objpas/classes/classesh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1970"/>
         <CursorPos X="14" Y="1863"/>
         <UsageCount Value="4"/>
-      </Unit14>
-      <Unit15>
+      </Unit17>
+      <Unit18>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/stdctrls.pp"/>
         <UnitName Value="StdCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="887"/>
         <CursorPos X="3" Y="901"/>
         <UsageCount Value="4"/>
-      </Unit15>
-      <Unit16>
+      </Unit18>
+      <Unit19>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/dbctrls.pp"/>
         <UnitName Value="DbCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="154"/>
         <CursorPos X="3" Y="168"/>
         <UsageCount Value="4"/>
-      </Unit16>
-      <Unit17>
+      </Unit19>
+      <Unit20>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3506"/>
         <CursorPos Y="3519"/>
         <UsageCount Value="14"/>
-      </Unit17>
-      <Unit18>
+      </Unit20>
+      <Unit21>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/interfaces/gtk2/gtk2winapi.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="8118"/>
         <CursorPos Y="8131"/>
         <UsageCount Value="4"/>
-      </Unit18>
-      <Unit19>
+      </Unit21>
+      <Unit22>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7641"/>
         <CursorPos Y="7655"/>
         <UsageCount Value="8"/>
-      </Unit19>
-      <Unit20>
+      </Unit22>
+      <Unit23>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/customedit.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="612"/>
         <CursorPos Y="626"/>
         <UsageCount Value="8"/>
-      </Unit20>
-      <Unit21>
+      </Unit23>
+      <Unit24>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/customcombobox.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="198"/>
         <CursorPos Y="213"/>
         <UsageCount Value="9"/>
-      </Unit21>
-      <Unit22>
+      </Unit24>
+      <Unit25>
         <Filename Value="../../atsadmin20/datamodule/udm.pas"/>
         <ComponentName Value="dm"/>
         <HasResources Value="True"/>
@@ -236,8 +278,8 @@
         <TopLine Value="380"/>
         <CursorPos Y="400"/>
         <UsageCount Value="9"/>
-      </Unit22>
-      <Unit23>
+      </Unit25>
+      <Unit26>
         <Filename Value="../datamodule/dm_pkg.lpk"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
@@ -245,166 +287,154 @@
         <CursorPos X="-1" Y="-1"/>
         <UsageCount Value="19"/>
         <DefaultSyntaxHighlighter Value="XML"/>
-      </Unit23>
-      <Unit24>
+      </Unit26>
+      <Unit27>
         <Filename Value="/usr/share/lazarus/1.8.4/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1006"/>
         <CursorPos Y="1020"/>
         <UsageCount Value="10"/>
-      </Unit24>
-      <Unit25>
-        <Filename Value="uestoquerel.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="fEstoqueRel"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uEstoqueRel"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="20"/>
-        <CursorPos X="58" Y="34"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit25>
-      <Unit26>
-        <Filename Value="uloterel.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="fLoteRel"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uLoteRel"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="6" Y="9"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit26>
+      </Unit27>
+      <Unit28>
+        <Filename Value="../../../reportman-delphi/rptypes.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="587"/>
+        <CursorPos X="62" Y="601"/>
+        <UsageCount Value="10"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="../../../reportman-delphi/rpevalfunc.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2842"/>
+        <CursorPos X="38" Y="2856"/>
+        <UsageCount Value="10"/>
+      </Unit29>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="62" Column="22" TopLine="35"/>
+        <Filename Value="ulotebusca.pas"/>
+        <Caret Line="216" TopLine="194"/>
       </Position1>
       <Position2>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="61" Column="22" TopLine="34"/>
+        <Filename Value="ulotebusca.pas"/>
+        <Caret Line="220" TopLine="197"/>
       </Position2>
       <Position3>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="62" Column="22" TopLine="35"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="291" TopLine="278"/>
       </Position3>
       <Position4>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="61" Column="22" TopLine="34"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="297" TopLine="278"/>
       </Position4>
       <Position5>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="62" Column="22" TopLine="35"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="298" TopLine="278"/>
       </Position5>
       <Position6>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="63" Column="22" TopLine="36"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="299" TopLine="278"/>
       </Position6>
       <Position7>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="64" Column="22" TopLine="37"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="300" TopLine="278"/>
       </Position7>
       <Position8>
-        <Filename Value="uloterel.pas"/>
-        <Caret Line="8" Column="81"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="299" TopLine="278"/>
       </Position8>
       <Position9>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="55" Column="58" TopLine="41"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="301" TopLine="279"/>
       </Position9>
       <Position10>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="54" Column="58" TopLine="40"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="303" TopLine="281"/>
       </Position10>
       <Position11>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="53" Column="58" TopLine="39"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="304" TopLine="282"/>
       </Position11>
       <Position12>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="52" Column="58" TopLine="38"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="305" TopLine="283"/>
       </Position12>
       <Position13>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="51" Column="58" TopLine="37"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="306" TopLine="284"/>
       </Position13>
       <Position14>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="50" Column="58" TopLine="36"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="307" TopLine="285"/>
       </Position14>
       <Position15>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="49" Column="58" TopLine="35"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="308" TopLine="286"/>
       </Position15>
       <Position16>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="48" Column="58" TopLine="34"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="309" TopLine="287"/>
       </Position16>
       <Position17>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="47" Column="58" TopLine="33"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="310" TopLine="288"/>
       </Position17>
       <Position18>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="46" Column="58" TopLine="32"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="311" TopLine="289"/>
       </Position18>
       <Position19>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="45" Column="58" TopLine="31"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="312" TopLine="290"/>
       </Position19>
       <Position20>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="44" Column="58" TopLine="30"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="313" TopLine="291"/>
       </Position20>
       <Position21>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="43" Column="58" TopLine="29"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="315" TopLine="293"/>
       </Position21>
       <Position22>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="42" Column="58" TopLine="28"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="316" TopLine="294"/>
       </Position22>
       <Position23>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="41" Column="58" TopLine="27"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="317" TopLine="295"/>
       </Position23>
       <Position24>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="40" Column="58" TopLine="26"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="318" TopLine="296"/>
       </Position24>
       <Position25>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="39" Column="58" TopLine="25"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="317" TopLine="296"/>
       </Position25>
       <Position26>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="38" Column="58" TopLine="24"/>
+        <Filename Value="ulotelancar.pas"/>
+        <Caret Line="319" TopLine="297"/>
       </Position26>
       <Position27>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="37" Column="58" TopLine="23"/>
+        <Filename Value="ulotebusca.pas"/>
+        <Caret Line="184" TopLine="170"/>
       </Position27>
       <Position28>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="36" Column="58" TopLine="22"/>
+        <Filename Value="ulotebusca.pas"/>
+        <Caret Line="189" TopLine="170"/>
       </Position28>
       <Position29>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="35" Column="58" TopLine="21"/>
+        <Filename Value="ulotetransfere.pas"/>
+        <Caret Line="471" TopLine="458"/>
       </Position29>
       <Position30>
-        <Filename Value="uestoquerel.pas"/>
-        <Caret Line="34" Column="58" TopLine="20"/>
+        <Filename Value="ulotetransfere.pas"/>
+        <Caret Line="472" TopLine="458"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="2">
+    <BreakPoints Count="1">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
@@ -412,13 +442,6 @@
         <Source Value="../datamodule/udm.pas"/>
         <Line Value="448"/>
       </Item1>
-      <Item2>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="ulotetransfere.pas"/>
-        <Line Value="467"/>
-      </Item2>
     </BreakPoints>
     <Watches Count="1">
       <Item1>

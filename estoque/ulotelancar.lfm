@@ -1,7 +1,9 @@
 inherited fLoteLancar: TfLoteLancar
-  Height = 492
+  Left = 276
+  Height = 595
+  Top = 76
   Caption = 'LANÇAR LOTE'
-  ClientHeight = 492
+  ClientHeight = 595
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
@@ -10,8 +12,8 @@ inherited fLoteLancar: TfLoteLancar
     Font.Height = -29
   end
   inherited Panel2: TPanel
-    Height = 442
-    ClientHeight = 442
+    Height = 545
+    ClientHeight = 545
     inherited btnINC: TImage
       OnClick = btnINCClick
     end
@@ -27,13 +29,17 @@ inherited fLoteLancar: TfLoteLancar
     inherited btnSALV: TImage
       OnClick = btnSALVClick
     end
+    inherited btnClose: TImage
+      OnClick = btnCloseClick
+    end
   end
   inherited Panel3: TPanel
-    Height = 442
-    ClientHeight = 442
+    Height = 545
+    ClientHeight = 545
+    OnClick = Panel3Click
     object edCodProduto: TEdit[0]
       Left = 80
-      Height = 32
+      Height = 23
       Top = 64
       Width = 80
       OnExit = edCodProdutoExit
@@ -41,30 +47,30 @@ inherited fLoteLancar: TfLoteLancar
     end
     object Label1: TLabel[1]
       Left = 17
-      Height = 20
+      Height = 15
       Top = 64
-      Width = 56
+      Width = 43
       Caption = 'Produto'
       ParentColor = False
     end
     object edProduto: TEdit[2]
       Left = 200
-      Height = 32
+      Height = 23
       Top = 64
       Width = 456
       TabOrder = 4
     end
     object Label2: TLabel[3]
       Left = 216
-      Height = 20
+      Height = 15
       Top = 16
-      Width = 30
+      Width = 23
       Caption = 'Lote'
       ParentColor = False
     end
     object edLote: TEdit[4]
       Left = 272
-      Height = 32
+      Height = 23
       Hint = 'Deixe vazio para o sistema criar o Lote.'
       Top = 16
       Width = 168
@@ -83,9 +89,9 @@ inherited fLoteLancar: TfLoteLancar
     end
     object edData: TDateTimePicker[6]
       Left = 80
-      Height = 26
+      Height = 23
       Top = 16
-      Width = 107
+      Width = 83
       CenturyFrom = 1941
       MaxDate = 47848
       MinDate = 43009
@@ -105,42 +111,42 @@ inherited fLoteLancar: TfLoteLancar
     end
     object Label3: TLabel[7]
       Left = 8
-      Height = 20
+      Height = 15
       Top = 16
-      Width = 65
+      Width = 49
       Caption = 'Data Fab.'
       ParentColor = False
     end
     object Label4: TLabel[8]
       Left = 464
-      Height = 20
+      Height = 15
       Top = 16
-      Width = 81
+      Width = 62
       Caption = 'Quantidade'
       ParentColor = False
     end
     object edQuantidade: TEdit[9]
       Left = 560
-      Height = 32
+      Height = 23
       Top = 16
       Width = 93
       TabOrder = 2
     end
     object Label5: TLabel[10]
       Left = 37
-      Height = 20
+      Height = 15
       Top = 120
-      Width = 36
+      Width = 28
       Caption = 'Local'
       ParentColor = False
     end
     object cbLocal: TComboBox[11]
       Left = 80
-      Height = 32
+      Height = 23
       Hint = 'Local onde o Lote está/será ARMAZENADO'
       Top = 112
       Width = 574
-      ItemHeight = 0
+      ItemHeight = 15
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
@@ -180,6 +186,167 @@ inherited fLoteLancar: TfLoteLancar
       DataSource = dsLote
       TabOrder = 7
     end
+    object Label16: TLabel[13]
+      Left = 444
+      Height = 15
+      Top = 488
+      Width = 79
+      Caption = 'DPI Impressora'
+      ParentColor = False
+      Visible = False
+    end
+    object Label14: TLabel[14]
+      Left = 368
+      Height = 15
+      Top = 480
+      Width = 44
+      Caption = 'Modelo:'
+      ParentColor = False
+      Visible = False
+    end
+    object Label25: TLabel[15]
+      Left = 17
+      Height = 15
+      Top = 470
+      Width = 31
+      Caption = 'Porta:'
+      ParentColor = False
+      Visible = False
+    end
+    object cbPorta: TComboBox[16]
+      Left = 64
+      Height = 23
+      Top = 470
+      Width = 161
+      ItemHeight = 15
+      ItemIndex = 6
+      Items.Strings = (
+        'C:\temp\teste.txt'
+        'LPT1'
+        'LPT2'
+        'COM1'
+        'COM2'
+        'COM3'
+        '\\localhost\GC420'
+        '\\127.0.0.1\ARGOX'
+        'Digite a porta'
+      )
+      OnChange = cbPortaChange
+      TabOrder = 8
+      Text = '\\localhost\GC420'
+    end
+    object cbModelo: TComboBox[17]
+      Left = 344
+      Height = 23
+      Top = 504
+      Width = 94
+      ItemHeight = 15
+      ItemIndex = 3
+      Items.Strings = (
+        'etqNenhuma'
+        'etqPpla'
+        'etqPPlb'
+        'etqZPLII'
+        'etqEpl2'
+      )
+      OnChange = cbModeloChange
+      Style = csDropDownList
+      TabOrder = 9
+      Text = 'etqZPLII'
+      Visible = False
+    end
+    object cbDPI: TComboBox[18]
+      Left = 424
+      Height = 23
+      Top = 512
+      Width = 94
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'dpi203'
+        'dpi300'
+        'dpi600'
+      )
+      Style = csDropDownList
+      TabOrder = 10
+      Text = 'dpi203'
+      Visible = False
+    end
+    object eVelocidade: TEdit[19]
+      Left = 225
+      Height = 23
+      Hint = 'Utilize ''-1'' para usar velocidade padrão da impressora'
+      Top = 488
+      Width = 113
+      TabOrder = 11
+      Text = '-1'
+      Visible = False
+    end
+    object eAvanco: TEdit[20]
+      Left = 208
+      Height = 23
+      Top = 512
+      Width = 112
+      TabOrder = 12
+      Text = '0'
+      Visible = False
+    end
+    object cbBackFeed: TComboBox[21]
+      Left = 312
+      Height = 23
+      Top = 496
+      Width = 94
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'bfNone'
+        'bfOn'
+        'bfOff'
+      )
+      Style = csDropDownList
+      TabOrder = 13
+      Text = 'bfNone'
+      Visible = False
+    end
+    object eTemperatura: TEdit[22]
+      Left = 192
+      Height = 23
+      Top = 504
+      Width = 113
+      TabOrder = 14
+      Text = '10'
+      Visible = False
+    end
+    object btnImp: TBitBtn[23]
+      Left = 528
+      Height = 30
+      Top = 459
+      Width = 88
+      Caption = 'Imprimir'
+      OnClick = btnImpClick
+      TabOrder = 15
+    end
+    object DBText1: TDBText[24]
+      Left = 632
+      Height = 21
+      Top = 459
+      Width = 63
+      DataField = 'ESTOQUE'
+      DataSource = dsLote
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnAmostra: TBitBtn[25]
+      Left = 64
+      Height = 30
+      Top = 504
+      Width = 160
+      Caption = 'Imprimir Amostra'
+      OnClick = btnAmostraClick
+      TabOrder = 16
+    end
   end
   inherited ds: TDataSource
     left = 184
@@ -189,5 +356,17 @@ inherited fLoteLancar: TfLoteLancar
     DataSet = dm.sqLote
     left = 62
     top = 13
+  end
+  object ACBrValidador1: TACBrValidador[5]
+    TipoDocto = docGTIN
+    IgnorarChar = './-'
+    left = 536
+    top = 24
+  end
+  object ACBrETQ1: TACBrETQ[6]
+    Porta = 'LPT1'
+    Ativo = False
+    left = 515
+    top = 87
   end
 end

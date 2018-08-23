@@ -3,7 +3,7 @@ object fEstoqueRel: TfEstoqueRel
   Height = 290
   Top = 178
   Width = 709
-  Caption = 'fEstoqueRel'
+  Caption = 'Relatórios'
   ClientHeight = 290
   ClientWidth = 709
   LCLVersion = '1.8.4.0'
@@ -13,7 +13,7 @@ object fEstoqueRel: TfEstoqueRel
     Top = 0
     Width = 709
     Align = alTop
-    Caption = 'Panel1'
+    Caption = 'Relatório'
     TabOrder = 0
   end
   object BitBtn1: TBitBtn
@@ -21,8 +21,17 @@ object fEstoqueRel: TfEstoqueRel
     Height = 42
     Top = 58
     Width = 267
-    Caption = 'Relatório de Lotes por Produto'
+    Caption = 'Relatório por Produto'
     OnClick = BitBtn1Click
     TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 8
+    Height = 42
+    Top = 104
+    Width = 267
+    Caption = 'Relatório por Lote'
+    OnClick = BitBtn2Click
+    TabOrder = 2
   end
 end

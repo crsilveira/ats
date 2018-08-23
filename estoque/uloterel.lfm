@@ -1,16 +1,17 @@
 object fLoteRel: TfLoteRel
-  Left = 562
+  Left = 342
   Height = 746
-  Top = 165
+  Top = 115
   Width = 849
   Caption = 'fLoteRel'
   ClientHeight = 746
   ClientWidth = 849
+  OnShow = FormShow
   LCLVersion = '1.8.4.0'
   object RLReport1: TRLReport
-    Left = 16
+    Left = 24
     Height = 1123
-    Top = 0
+    Top = 8
     Width = 794
     DataSource = ds
     Font.Color = clBlack
@@ -22,7 +23,7 @@ object fLoteRel: TfLoteRel
     RealBounds.Height = 0
     object RLLabel1: TRLLabel
       Left = 60
-      Height = 15
+      Height = 16
       Top = 56
       Width = 58
       RealBounds.Left = 0
@@ -40,12 +41,36 @@ object fLoteRel: TfLoteRel
       RealBounds.Top = 0
       RealBounds.Width = 0
       RealBounds.Height = 0
+      object RLDraw1: TRLDraw
+        Left = 8
+        Height = 25
+        Top = 7
+        Width = 695
+        Angle = 0
+        Brush.Color = clNone
+        Brush.Style = bsClear
+        Color = clAppWorkspace
+        ParentColor = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
       object RLLabel2: TRLLabel
-        Left = 72
-        Height = 15
-        Top = 16
-        Width = 106
+        Left = 280
+        Height = 19
+        Top = 8
+        Width = 141
         Caption = 'Relatório por Lote'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
@@ -53,9 +78,9 @@ object fLoteRel: TfLoteRel
       end
       object RLSystemInfo1: TRLSystemInfo
         Left = 441
-        Height = 15
+        Height = 16
         Top = 8
-        Width = 37
+        Width = 36
         Info = itTitle
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -64,10 +89,17 @@ object fLoteRel: TfLoteRel
       end
       object RLSystemInfo2: TRLSystemInfo
         Left = 521
-        Height = 15
-        Top = 8
-        Width = 118
+        Height = 14
+        Top = 10
+        Width = 96
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
         Info = itPageNumber
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
@@ -85,33 +117,99 @@ object fLoteRel: TfLoteRel
       RealBounds.Top = 0
       RealBounds.Width = 0
       RealBounds.Height = 0
+      object RLDraw3: TRLDraw
+        Left = 8
+        Height = 28
+        Top = 2
+        Width = 695
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
       object RLLabel3: TRLLabel
         Left = 23
-        Height = 15
-        Top = 13
-        Width = 29
+        Height = 16
+        Top = 8
+        Width = 32
         Caption = 'Lote'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLLabel4: TRLLabel
-        Left = 98
-        Height = 15
-        Top = 13
-        Width = 49
+        Left = 104
+        Height = 16
+        Top = 7
+        Width = 54
         Caption = 'Produto'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLLabel5: TRLLabel
-        Left = 195
-        Height = 15
-        Top = 10
-        Width = 58
+        Left = 410
+        Height = 16
+        Top = 8
+        Width = 54
+        Caption = 'Estoque'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw2: TRLDraw
+        Left = 248
+        Height = 16
+        Top = 216
+        Width = 48
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel6: TRLLabel
+        Left = 496
+        Height = 16
+        Top = 8
+        Width = 33
+        Caption = 'Data'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
@@ -127,11 +225,22 @@ object fLoteRel: TfLoteRel
       RealBounds.Top = 0
       RealBounds.Width = 0
       RealBounds.Height = 0
+      object RLDraw4: TRLDraw
+        Left = 8
+        Height = 28
+        Top = 4
+        Width = 695
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
       object RLDBText5: TRLDBText
         Left = 496
-        Height = 15
-        Top = 16
-        Width = 124
+        Height = 16
+        Top = 8
+        Width = 122
         DataField = 'DATAFABRICACAO'
         DataSource = ds
         RealBounds.Left = 0
@@ -140,34 +249,39 @@ object fLoteRel: TfLoteRel
         RealBounds.Height = 0
       end
       object RLDBText4: TRLDBText
-        Left = 410
-        Height = 15
-        Top = 16
-        Width = 68
+        Left = 408
+        Height = 16
+        Top = 8
+        Width = 67
+        Alignment = taRightJustify
         DataField = 'ESTOQUE'
         DataSource = ds
+        DisplayMask = ' ###,##0.00'
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLDBText3: TRLDBText
-        Left = 185
-        Height = 15
-        Top = 16
-        Width = 68
+        Left = 136
+        Height = 16
+        Top = 8
+        Width = 67
         DataField = 'PRODUTO'
         DataSource = ds
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
+        AfterPrint = RLDBText3AfterPrint
       end
       object RLDBText2: TRLDBText
-        Left = 87
-        Height = 15
-        Top = 16
+        Left = 72
+        Height = 16
+        Top = 8
         Width = 60
+        Alignment = taRightJustify
+        Anchors = [fkRight]
         DataField = 'CODPRO'
         DataSource = ds
         RealBounds.Left = 0
@@ -177,9 +291,9 @@ object fLoteRel: TfLoteRel
       end
       object RLDBText1: TRLDBText
         Left = 24
-        Height = 15
-        Top = 16
-        Width = 38
+        Height = 16
+        Top = 8
+        Width = 37
         DataField = 'LOTE'
         DataSource = ds
         RealBounds.Left = 0
@@ -198,26 +312,30 @@ object fLoteRel: TfLoteRel
       RealBounds.Top = 0
       RealBounds.Width = 0
       RealBounds.Height = 0
-      object RLSystemInfo3: TRLSystemInfo
-        Left = 165
-        Height = 15
-        Top = 11
-        Width = 39
-        RealBounds.Left = 0
-        RealBounds.Top = 0
-        RealBounds.Width = 0
-        RealBounds.Height = 0
-      end
       object RLSystemInfo4: TRLSystemInfo
-        Left = 381
-        Height = 15
-        Top = 12
+        Left = 666
+        Height = 16
+        Top = 16
         Width = 37
         Info = itNow
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
+      end
+      object RLDBResult1: TRLDBResult
+        Left = 408
+        Height = 16
+        Top = 16
+        Width = 106
+        DataField = 'ESTOQUE'
+        DataSource = ds
+        Info = riSum
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        AfterPrint = RLDBResult1AfterPrint
       end
     end
   end
